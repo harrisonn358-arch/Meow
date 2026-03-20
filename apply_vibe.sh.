@@ -391,8 +391,3 @@ pm install -r /sdcard/Download/nethersx2.apk
 pm install -r /sdcard/Download/citra_enhanced.apk
 
 echo "QUANTUM DEPLOYMENT COMPLETE. WELCOME TO YEAR 3000."
-# Every time you run your GitHub script, it creates a "Status Report" 
-# in your repo so you can monitor your "OS" from any computer.
-curl -X PUT -H "Authorization: token YOUR_GITHUB_TOKEN" \
-     -d "{\"message\":\"System Update: $(date)\",\"content\":\"$(echo 'Adriel OS v3.0 Active' | base64)\"}" \
-     https://api.github.com/repos/YOUR_USER/YOUR_REPO/contents/status.log
