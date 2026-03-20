@@ -196,3 +196,32 @@ settings put global force_resizable_activities 1
 # Useful for writing in public without distractions.
 settings put secure accessibility_display_grayscale_enabled 1
 
+# --- CARTMAN X Y2K NEON MATRIX ---
+# Cyan (#00B8C4) Base | Pink (#EE3253) Accents | Yellow (#FFE11D) Highlights
+# The 'VIBRANT' style creates those high-contrast 2000s "Glossy" gradients.
+settings put secure theme_customization_overlay_packages '{"android.theme.customization.system_palette":"#00B8C4","android.theme.customization.accent_color":"#EE3253","android.theme.customization.theme_style":"VIBRANT","android.theme.customization.color_both":"1"}'
+
+# --- THE "GLOSS" EFFECT ---
+# Panasonic Let's Note screens were high-glare. We mimic this by forcing 
+# maximum transparency and blur on all system windows.
+settings put global disable_window_blurs 0
+settings put secure accessibility_reduce_transparency 0
+# --- ULTRA-DENSE INDUSTRIAL UI ---
+# This makes your phone look like a 10-inch laptop screen.
+# 560 is the "Pro" level; it will make your Cartman theme look sharper.
+wm density 560
+
+# --- THE "BIOS" STATUS BAR ---
+# Hide the "Consumer" icons (Battery, WiFi) and show raw system data.
+settings put secure icon_blacklist battery,wifi,bluetooth,cell,alarm_clock,vibrate
+settings put secure status_bar_clock_seconds 1
+settings put system status_bar_show_battery_percent 1
+# --- AUTHORIZED USER LOG ---
+settings put system lock_screen_owner_info "[SYSLOG_v2000] // USER: CARTMAN_ADRIEL // LOC: BIKINI_BOTTOM // ENCRYPTION: 128-BIT"
+settings put system lock_screen_owner_info_enabled 1
+# --- THE 2000s GLITCH TRIGGER ---
+# When you run this, it flashes the screen and "boots" your custom UI.
+# It makes it look like you're hacking the hardware in real-time.
+settings put global transition_animation_scale 5.0
+sleep 0.5
+settings put global transition_animation_scale 0.0 # Instant robotic snaps
