@@ -158,3 +158,41 @@ settings put secure icon_blacklist battery,wifi,bluetooth,cell,alarm_clock,vibra
 # Change the lockscreen text to look like a system boot log
 settings put system lock_screen_owner_info "[ADRIEL_OS_v2.6] // KERNEL: STABLE // AUTH_REQUIRED"
 settings put system lock_screen_owner_info_enabled 1
+
+# Cyan/Silver Base (#E0FFFF) with Pink/Magenta Accents (#FF1493)
+settings put secure theme_customization_overlay_packages '{"android.theme.customization.color_both":"1","android.theme.customization.color_source":"#E0FFFF","android.theme.customization.accent_color":"#FF1493","android.theme.customization.theme_style":"VIBRANT"}'
+# Creates a system shortcut to your Manuscript folder on the Home Screen
+# (Requires a launcher that supports ADB-added shortcuts like Smart Dock)
+am create-shortcut --name "MANUSCRIPT_ARCHIVE" --uri "file:///sdcard/Download/YourBookRepo"
+# --- SPONGEBOB X SOUTH PARK COLOR ENGINE ---
+# Primary: SpongeBob Yellow (#FFF56C) | Accent: Cartman Cyan (#00B8C4)
+# Style: 'VIBRANT' forces these to glow against the system dark mode.
+settings put secure theme_customization_overlay_packages '{"android.theme.customization.system_palette":"#FFF56C","android.theme.customization.accent_color":"#00B8C4","android.theme.customization.theme_style":"VIBRANT"}'
+
+# --- THE "PATRICK PINK" HIGHLIGHT ---
+# Use this for a subtle bluish-pinkish glow on the buttons
+settings put secure sysui_type_accent_color #FF91AF
+# --- INDUSTRIAL MONITORING ---
+# Show every detail: Battery %, Seconds on clock, and Data speeds
+settings put system status_bar_show_battery_percent 1
+settings put secure status_bar_clock_seconds 1
+settings put secure show_network_speed 1
+
+# --- THE BIOS BOOT MESSAGE ---
+# This changes your lock screen to look like a Panasonic BIOS 
+# but with a South Park / SpongeBob "Secret Service" feel.
+settings put system lock_screen_owner_info "PANASONIC CF-SV (2026) // [USER: ADRIEL] // SECTOR: BIKINI BOTTOM // STATUS: GOING DOWN TO SOUTH PARK"
+settings put system lock_screen_owner_info_enabled 1
+# --- PC-DENSITY OVERRIDE ---
+# Makes the phone feel like a tiny Panasonic Let's Note screen
+wm density 540
+
+# --- WINDOW SNAPPING ---
+# Force Windows-style "Snap" behavior for multi-tasking
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+# If you run this, it hides all SpongeBob/South Park colors 
+# and turns the phone into a "Black & White" Panasonic Work Terminal.
+# Useful for writing in public without distractions.
+settings put secure accessibility_display_grayscale_enabled 1
+
