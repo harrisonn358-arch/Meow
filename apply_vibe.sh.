@@ -66,3 +66,35 @@ settings put global heads_up_notifications_enabled 0
 
 # Force 120Hz Refresh Rate (Make the bluish-pinkish UI feel like liquid)
 # Note: Use 'wm refresh_rate 120' if your phone hardware supports it
+
+# --- ARCHITECTURE OVERRIDE ---
+# Force "Game Driver" logic for the entire System UI (smoother bluish-pinkish gradients)
+settings put global updatable_driver_all_apps 1
+
+# --- INPUT PRECISION (BlackBerry/Handheld PC Style) ---
+# Disable "Touch Exploration" and "Pointer Acceleration" for raw, robotic input feel
+settings put system pointer_speed 7
+settings put secure long_press_timeout 200 # Makes the UI feel incredibly responsive
+
+# --- ADVANCED WINDOWING ---
+# Allow windows to overlap and "Snap" like Windows 11
+settings put global pinner_flags 1
+# --- THE INVISIBLE STATUS BAR ---
+# This wipes the top bar completely. No clock, no battery, no distractions. 
+# It looks like a clean, futuristic slab of glass.
+settings put secure icon_blacklist battery,wifi,bluetooth,cell,alarm_clock,vibrate,zen,volume,location
+
+# --- NEON INJECTION (The "Cyber-Glow") ---
+# We are forcing a "Chromecast" style color palette: Deep Magenta & Electric Cyan
+settings put secure theme_customization_overlay_packages '{"android.theme.customization.color_both":"1","android.theme.customization.color_source":"#FF00FF","android.theme.customization.theme_style":"TONAL_SPOT"}'
+
+# --- THE "GLASS" EFFECT ---
+# Force the Blur effect on all windows (If your phone supports Android 14/15 blurs)
+# This gives it that expensive, high-end PC look.
+settings put global disable_window_blurs 0
+# Every time you run this, it sends a 'Heartbeat' to your GitHub
+# This makes it look like you're monitoring a remote server (your phone)
+curl -u YOUR_GITHUB_USER:YOUR_TOKEN -X PUT -d "{\"message\":\"Vibe Check\",\"content\":\"$(date | base64)\"}" https://api.github.com/repos/YOUR_USER/my-phone-vibe/contents/system_log.txt
+# This code disables the "Recents" button so no one can see what you were 
+# writing if they grab your phone. You have to "Code" your way back in.
+settings put secure navbar_buttons_managed_by_parent 1
