@@ -16,3 +16,30 @@ wm density 380
 settings put global policy_control immersive.navigation=*
 
 echo "Vibe applied. Welcome to the future."
+# Force "Cotton Candy" Palette: Pink Accents (#FF69B4) + Cyan Backgrounds (#E0FFFF)
+settings put secure theme_customization_overlay_packages '{"android.theme.customization.system_palette":"#FF69B4","android.theme.customization.accent_color":"#00FFFF","android.theme.customization.theme_style":"EXPRESSIVE"}'
+
+# Make the UI "Glassy" (Reduce transparency contrast for a futuristic look)
+settings put secure accessibility_reduce_transparency 0
+# Enable Freeform Windows (Allows you to float apps like Windows 10/11)
+settings put global enable_freeform_support 1
+
+# Force "Desktop Mode" on secondary displays (or Limbo sessions)
+settings put global force_desktop_mode_on_external_displays 1
+
+# Set a "Pro" Screen Density
+# 420 is standard; 360 is "large"; 480+ is "tiny/advanced"
+wm density 400
+# Hide the "Vibrate," "Bluetooth," and "Alarm" icons for a cleaner look
+settings put secure icon_blacklist vibrate,bluetooth,alarm_clock,volume
+
+# Move the Clock to the center (if supported by your ROM/Skin)
+# Note: This works best with the "SystemUI Tuner" app from GitHub
+# Disable "Absolute Volume" (Gives you more granular control over your IEM volume)
+settings put global btsession_absolute_volume_disabled 1
+
+# "Author Mode" - Disable Heads-up Notifications (Stops popups while writing)
+settings put global heads_up_notifications_enabled 0
+# Create a shortcut for a "Liturgical Theme" 
+# Run this command to swap to Purple/Gold colors during Lent/Easter
+# settings put secure theme_customization_overlay_packages '{"android.theme.customization.accent_color":"#800080"}'
