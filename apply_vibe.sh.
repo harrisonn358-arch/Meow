@@ -3,9 +3,9 @@ settings put global window_animation_scale 0.2
 settings put global transition_animation_scale 0.2
 settings put global animator_duration_scale 0.2
 
-# --- Bluish-Pinkish Material You Palette ---
-# This forces a Neon Pink (#FF00FF) and Cyan (#00FFFF) vibe
-settings put secure theme_customization_overlay_packages '{"android.theme.customization.system_palette":"#FF00FF", "android.theme.customization.accent_color":"#00FFFF", "android.theme.customization.theme_style":"EXPRESSIVE"}'
+# Lock the 'Sakura-Cyber' palette into the secure settings table
+settings put secure sysui_theme_customization '{"android.theme.customization.accent_color":"#FF1493","android.theme.customization.system_palette":"#00008B","android.theme.customization.color_source":"preset"}'
+
 
 # --- Advanced High-Res UI (DPI Change) ---
 # Makes things smaller/more "pro" looking. Adjust 380 to your liking.
@@ -78,11 +78,8 @@ settings put secure long_press_timeout 200 # Makes the UI feel incredibly respon
 
 # --- ADVANCED WINDOWING ---
 # Allow windows to overlap and "Snap" like Windows 11
-settings put global pinner_flags 1
-# --- THE INVISIBLE STATUS BAR ---
-# This wipes the top bar completely. No clock, no battery, no distractions. 
+settings put global pinner_flags 
 # It looks like a clean, futuristic slab of glass.
-settings put secure icon_blacklist battery,wifi,bluetooth,cell,alarm_clock,vibrate,zen,volume,location
 
 # --- NEON INJECTION (The "Cyber-Glow") ---
 # We are forcing a "Chromecast" style color palette: Deep Magenta & Electric Cyan
@@ -93,8 +90,7 @@ settings put secure theme_customization_overlay_packages '{"android.theme.custom
 # This gives it that expensive, high-end PC look.
 settings put global disable_window_blurs 0
 # Every time you run this, it sends a 'Heartbeat' to your GitHub
-# This makes it look like you're monitoring a remote server (your phone)
-curl -u YOUR_GITHUB_USER:YOUR_TOKEN -X PUT -d "{\"message\":\"Vibe Check\",\"content\":\"$(date | base64)\"}" https://api.github.com/repos/YOUR_USER/my-phone-vibe/contents/system_log.txt
+# This makes it look like you're monitoring a remote server (your phone) 
 # This code disables the "Recents" button so no one can see what you were 
 # writing if they grab your phone. You have to "Code" your way back in.
 settings put secure navbar_buttons_managed_by_parent 1
@@ -123,13 +119,10 @@ settings put global disable_window_blurs 0
 # Background: Deep Space Blue (#000022) | Accent: Hyper-Pink (#FF007F)
 settings put secure theme_customization_overlay_packages '{"android.theme.customization.system_palette":"#FF007F","android.theme.customization.accent_color":"#00E5FF","android.theme.customization.theme_style":"VIBRANT"}'
 
-# --- ICON STEALTHER ---
-# Wipes the status bar clean. It looks like a solid slab of glass.
-settings put secure icon_blacklist battery,wifi,bluetooth,cell,alarm_clock,vibrate,rotate
 # --- HIGH-DENSITY TERMINAL (BlackBerry Passport Vibe) ---
 # This makes everything smaller, sharper, and professional. 
-# 500-600 is the "Sweet Spot" for looking like a PC handheld.
-wm density 540
+# 300-400 is the "Sweet Spot" for looking like a PC handheld.
+wm density 380
 
 # --- GLOBAL WINDOW TILING ---
 # Force "Freeform" windows so you can have your writing app, 
@@ -149,10 +142,7 @@ settings put secure theme_customization_overlay_packages '{"android.theme.custom
 # --- THE "GLASS" SYSTEM ---
 # This enables advanced blur effects seen in Chinese HyperOS/OriginOS
 settings put global disable_window_blurs 0
-# --- WIPE THE STATUS BAR ---
-# Removes every icon from the top. Total stealth. 
 # It looks like a custom industrial slab of tech.
-settings put secure icon_blacklist battery,wifi,bluetooth,cell,alarm_clock,vibrate,location,volume
 
 # --- LOCKSCREEN BIOS ---
 # Change the lockscreen text to look like a system boot log
@@ -208,14 +198,11 @@ settings put global disable_window_blurs 0
 settings put secure accessibility_reduce_transparency 0
 # --- ULTRA-DENSE INDUSTRIAL UI ---
 # This makes your phone look like a 10-inch laptop screen.
-# 560 is the "Pro" level; it will make your Cartman theme look sharper.
-wm density 560
+# 380 is the "Pro" level; it will make your Cartman theme look sharper.
+wm density 380
 
 # --- THE "BIOS" STATUS BAR ---
-# Hide the "Consumer" icons (Battery, WiFi) and show raw system data.
-settings put secure icon_blacklist battery,wifi,bluetooth,cell,alarm_clock,vibrate
-settings put secure status_bar_clock_seconds 1
-settings put system status_bar_show_battery_percent 1
+# show raw system data.
 # --- AUTHORIZED USER LOG ---
 settings put system lock_screen_owner_info "[SYSLOG_v2000] // USER: CARTMAN_ADRIEL // LOC: BIKINI_BOTTOM // ENCRYPTION: 128-BIT"
 settings put system lock_screen_owner_info_enabled 1
@@ -248,9 +235,7 @@ settings put secure theme_customization_overlay_packages '{"android.theme.custom
 settings put secure ui_night_mode 2
 # --- STEALTH STATUS BAR ---
 # Removes the "Mobile" feel. It now looks like a Panasonic diagnostic tool.
-settings put secure icon_blacklist battery,wifi,bluetooth,cell,alarm_clock,vibrate,rotate
 # Show the clock down to the second (Very 2000s PC vibe)
-settings put secure status_bar_clock_seconds 1
 # --- BIOS BOOTLOADER MESSAGE ---
 settings put system lock_screen_owner_info "PANASONIC CF-SV [Z-FLIP-7] // BIOS v2.6 // USER: ADRIEL // BIKINI BOTTOM SECURE LINK: ACTIVE"
 settings put system lock_screen_owner_info_enabled 1
@@ -366,8 +351,8 @@ echo "BOOTING SYSTEM... [ADRIEL_AUTHOR_PROTOCOL_ACTIVE]"
 settings put secure theme_customization_overlay_packages '{"android.theme.customization.system_palette":"#00B8C4","android.theme.customization.accent_color":"#FF91AF","android.theme.customization.theme_style":"EXPRESSIVE","android.theme.customization.color_both":"1"}'
 
 # 2. PANASONIC "QUANTUM" DENSITY (The Let's Note Look)
-# 580 DPI makes your Z Flip 7 look like a high-end Japanese engineering laptop.
-wm density 580
+# 380 DPI makes your Z Flip 7 look like a high-end Japanese engineering laptop.
+wm density 380
 
 # 3. STEAM DECK "KINETIC" ANIMATIONS
 # Removing all "Human" delays. Everything is instant, robotic, and snappy.
@@ -389,5 +374,1560 @@ settings put system lock_screen_owner_info_enabled 1
 pm install -r --bypass-low-target-sdk-block /sdcard/Download/winlator.apk
 pm install -r /sdcard/Download/nethersx2.apk
 pm install -r /sdcard/Download/citra_enhanced.apk
+
+settings put global window_animation_scale 0.0
+settings put global transition_animation_scale 0.0
+settings put global animator_duration_scale 0.0
+settings put global show_processes 1
+settings put global dynamic_interval_control 0
+settings put peak_refresh_rate 120.0
+settings put secure notification_bubbles 0
+settings put secure accessibility_display_daltonizer_enabled 1
+settings put secure accessibility_display_daltonizer 0
+settings put secure com.sec.android.app.launcher.grid_size 6x6
+settings put navigation_bar_height 24
+settings put secure accessibility_display_daltonizer_enabled 1
+settings put secure accessibility_display_daltonizer 0
+settings put secure ui_night_mode 2
+settings put global window_animation_scale 0.0
+settings put secure accessibility_display_daltonizer_enabled 0
+settings put secure theme_customization_overlay_packages '{"android.theme.customization.system_palette":"#00B8C4","android.theme.customization.accent_color":"#FF91AF","android.theme.customization.theme_style":"EXPRESSIVE"}'
+settings put secure accessibility_display_high_contrast_text 1
+settings put global low_power_backlight_brightness 255
+settings put system screen_brightness_mode 1
+settings put global navigation_bar_gesture_hint 0settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+setprop debug.hwui.renderer skiavk
+setprop debug.renderengine.backend skiavk
+settings put secure accessibility_display_high_contrast_text 1
+settings put secure theme_customization_overlay_packages '{"android.theme.customization.system_palette":"#00B8C4","android.theme.customization.accent_color":"#FF91AF"}'
+setprop debug.hwui.render_dirty_regions false
+settings put secure show_ime_with_hard_keyboard 1
+settings put secure navigation_bar_color 0
+settings put global policy_control null*
+settings put global immersive_mode_confirmations 1
+settings put home_char_color 0
+settings put system peak_refresh_rate 120.0
+settings put global low_power_mode_sticky 0
+setprop debug.hwui.renderer skiavk
+settings put global low_power_mode_sticky 0
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1settings put system haptic_feedback_intensity 3settings put secure show_ime_with_hard_keyboard 1The vibe and features I want:
+-windows 10
+-ayn Thor
+-pc
+-able to play every and any game
+-BlackBerry aesthetic
+-launcher95 pro utilization and customization 
+-custom cursor 
+-2000s vibe
+-cute
+-pink
+-south park imagery and spongebob 
+-religious and Christian 
+-utilization of my Tappy keyboard so it's like a physical one
+-advanced library feel
+-utilization of the galaxy z flip 7 aestheticsettings put secure accessibility_display_high_contrast_text 1settings put system font_family "monospace"settings put global continuity_mode 1settings put secure theme_customization_overlay_packages '{"android.theme.customization.system_palette":"#FF91AF","android.theme.customization.accent_color":"#00B8C4","android.theme.customization.theme_style":"EXPRESSIVE"}'
+settings put system font_family "serif"theme_customization_overlay_packages '{"android.theme.customization.system_palette":"#FF91AF","android.theme.customization.accent_color":"#00B8C4"}'# Set Launcher95 Pro as the default home app
+pm set-home-activity com.launcher95.pro
+
+# Force the screen density lower to pack more icons/windows onto the screen (PC feel)
+wm density 220
+
+# Enable Android's hidden freeform window mode for overlapping, drag-and-drop windows
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+# Force system accent color to Hot Pink (#FF69B4)
+settings put secure sysui_theme_customization '{"android.theme.customization.system_palette":"#FF69B4"}'
+
+# Force the system into Dark Mode to contrast with the neon pink (Library/Y2K vibe)
+settings put secure ui_night_mode 2
+# Enable the Tappy keyboard
+ime enable com.tappy.keyboard/.TappyIME
+
+# Set Tappy as the active default keyboard
+ime set com.tappy.keyboard/.TappyIME
+
+# Maximize system haptic feedback to mimic physical button clicks
+settings put system haptic_feedback_enabled 1
+settings put system haptic_feedback_intensity 3
+# Create the heavy Catholic Library aesthetic wallpaper directories
+mkdir -p /sdcard/Pictures/Aesthetic/Catholic_Library_PinkNeon
+mkdir -p /sdcard/Pictures/Aesthetic/Z_Flip_Widgets
+
+# Create directories for 2000s media and custom cursor files
+mkdir -p /sdcard/Icons/Custom_Cursors
+mkdir -p /sdcard/Pictures/Aesthetic/SouthPark_Y2K
+mkdir -p /sdcard/Pictures/Aesthetic/SpongeBob_Lore
+
+# Create the folder for your Shimeji desktop buddies
+mkdir -p /sdcard/Shimeji/Characters/SpongeBob
+mkdir -p /sdcard/Shimeji/Characters/Cartman
+# Keep the screen on while plugged in (useful for a constant widget display)
+settings put global stay_on_while_plugged_in 3
+
+# Launch your Z Flip 7 widget overlay app (replace 'com.widget.app' with your actual app package name)
+monkey -p com.widget.app -c android.intent.category.LAUNCHER 1
+# Set a custom Device Name to 'AYN Thor'
+settings put global device_name "AYN Thor"
+
+# Force the screen density to simulate a high-res handheld (makes icons/windows smaller and more 'PC-like')
+# Try 320 or 280 for a more 'cluttered' maximalist look
+wm density 300
+
+# Force the resolution to a 16:9 or 4:3 ratio if you want that retro 2000s monitor feel
+# (Example for a standard 1080p height)
+wm size 1080x1920
+# Set Launcher95 Pro as the absolute system master
+pm set-home-activity com.launcher95.pro
+
+# Enable 'Freeform Windows' so you can have South Park and SpongeBob apps 
+# floating over each other like a real Windows 10 PC
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+
+# Force the Status Bar to stay visible even in 'fullscreen' games (for that 2000s taskbar look)
+settings put global policy_control immersive.full=*
+# Create the asset structure
+mkdir -p /sdcard/Windows10_Project/SpongeBob_Assets
+mkdir -p /sdcard/Windows10_Project/SouthPark_Assets
+mkdir -p /sdcard/Windows10_Project/Religious_Icons
+mkdir -p /sdcard/Windows10_Project/Custom_Cursors
+
+# Move to the project folder to start editing
+cd /sdcard/Windows10_Project/
+# Enable and set Tappy as the primary input method
+ime enable com.tappy.keyboard/.TappyIME
+ime set com.tappy.keyboard/.TappyIME
+
+# Maximize the haptic 'click' to feel like a plastic BlackBerry key
+settings put system haptic_feedback_enabled 1
+settings put system haptic_feedback_intensity 3
+# Grant 'Draw Over Other Apps' permission to your widget/launcher app
+appops set com.launcher95.pro SYSTEM_ALERT_WINDOW allow
+
+# Force a persistent 'Cover Screen' style notification
+settings put secure lock_screen_show_notifications 1
+# Force the system to identify as a gaming handheld for better app compatibility
+setprop ro.product.model "AYN Thor Max"
+setprop ro.product.brand "ayn"
+setprop ro.product.manufacturer "ayntec"
+
+# Force high-performance 'Gaming Mode' on the CPU (if rooted)
+setprop debug.egl.hw 1
+setprop persist.sys.composition.type gpu
+
+# Set the screen to a 2000s PC aspect ratio (cluttered desktop feel)
+wm size 1080x1920
+wm density 320
+# Force the Steam app to boot directly into the Steam Deck 'Gamepad UI'
+# Note: Requires Steam installed via Winlator or an ARM build
+am start -n com.valvesoftware.android.steam.community/com.valvesoftware.steam.Main --es "args" "-gamepadui"
+
+# Ensure the system treats the Volume/Power buttons as 'Steam' and 'Quick Access' buttons
+settings put global policy_control immersive.full=* ```
+
+### 3. Windows 10 Environment (Winlator x A-Shell Bridge)
+To run "Every and any game," you need a container. Use these commands to prep the file system for the Windows 10 x86 environment.
+
+```bash
+# Create the Root Directory for Windows 10 C: Drive simulation
+mkdir -p /sdcard/Win10_OS/System32
+mkdir -p /sdcard/Win10_OS/Users/Adriel/Desktop
+
+# Grant 'A-Shell' deep filesystem access to the Windows Container
+appops set com.winlator MANAGE_EXTERNAL_STORAGE allow
+
+# Command to boot your Windows 10 container from the shell
+am start -n com.winlator/.MainActivity
+# Force the Tappy Keyboard to stay 'Persistent' (it never hides)
+settings put secure show_ime_with_hard_keyboard 1
+
+# Increase Haptic feedback to 11 for that 'Mechanical Click' feel
+settings put system haptic_feedback_intensity 3
+settings put system haptic_feedback_enabled 1
+# Create the South Park / SpongeBob 'Desktop Buddy' trigger
+# This allows them to spawn over your Windows 10 and Steam Deck UI
+appops set com.shimeji.pack SYSTEM_ALERT_WINDOW allow
+
+# Set the 'Catholic Library' Wallpaper via Shell
+# Replace 'wallpaper.jpg' with your specific file path
+termux-wallpaper -f /sdcard/Windows10_Project/Religious_Icons/cathedral_pink.jpg
+
+# Force Hot Pink system accents over the Windows Blue
+settings put secure sysui_theme_customization '{"android.theme.customization.accent_color":"#FF69B4"}'
+#!/bin/bash
+echo "Initializing Custom OS: Windows-Thor-Deck-BlackBerry Hybrid..."
+wm density 300
+settings put global enable_freeform_support 1
+am start -n com.launcher95.pro/com.launcher95.MainActivity
+am start -n com.tappy.keyboard/.TappyIME
+echo "OS Loaded. No Minimalism Detected."
+# Force the system to identify as AYN Thor for optimized driver access
+setprop ro.product.model "AYN Thor Max"
+setprop ro.product.manufacturer "AYN"
+
+# Disable Thermal Throttling (Warning: Phone will get HOT, fits the PC vibe)
+settings put global power_manager_constants "no_light_sensor=true,vibration_intensity=255"
+cmd power set-fixed-performance-mode-enabled true
+
+# Force GPU to render at Max Frequency for "Every and Any Game"
+setprop debug.egl.hw 1
+setprop debug.gr.num_common_buffers 3
+# Enable 'Desktop Windowing' (Android 16 style) for overlapping PC windows
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+
+# Force Steam Deck 'Game Mode' UI to launch on top of everything
+am start -n com.valvesoftware.android.steam.community/com.valvesoftware.steam.Main --es "args" "-gamepadui"
+
+# Launch Launcher95 Pro in a pinned 'floating window' to act as the Start Menu
+am start -n com.launcher95.pro/.MainActivity --windowingMode 5
+# Force Hi-Fi Audio Bitrate (High Quality Music Profile)
+setprop persist.audio.hifi true
+setprop audio.offload.pcm.16bit.enable 1
+
+# If you use a parametric EQ app like JamesDSP or Wavelet, use this to 
+# ensure the 'Library' acoustics are never killed by the system
+pm grant com.james.dsp android.permission.WRITE_SECURE_SETTINGS
+appops set com.james.dsp REQUEST_IGNORE_BATTERY_OPTIMIZATIONS allow
+# Reserve the bottom 30% of the screen for the Tappy Keyboard (Manual Overscan)
+# Note: Adjust 'bottom' value (the last number) based on your phone's height
+wm overscan 0,0,0,600
+
+# Force the IME (Keyboard) to stay active even when a Mouse/Controller is plugged in
+settings put secure show_ime_with_hard_keyboard 1
+# Create the 'Shrine' directories for your imagery
+mkdir -p /sdcard/OS_ASSETS/RELIGIOUS_MAXIMALISM
+mkdir -p /sdcard/OS_ASSETS/SOUTH_PARK_VIBE
+mkdir -p /sdcard/OS_ASSETS/SPONGEBOB_COLLECTIBLES
+
+# Set the 'Catholic Library' Wallpaper (Replace path with your file)
+# This command bypasses the picker and forces the image onto the System UI
+cmd wallpaper set /sdcard/Pictures/cathedral_neon_pink.jpg
+
+# Force 'Themed Icons' to match the Pink/Blue palette across the OS
+settings put secure themed_icon_color "-65292" # Hex for Hot Pink
+# Force system to identify as a high-performance console
+setprop ro.product.model "AYN Thor Ultra"
+setprop ro.product.manufacturer "AYN"
+
+# Disable all 'Minimalist' UI smoothing - make it snappy like a PS2 menu
+settings put global window_animation_scale 0.2
+settings put global transition_animation_scale 0.2
+# Crank the density so icons are small and the screen feels huge like a PC
+wm density 240
+
+# Enable overlapping windows (Freeform Mode) for the South Park/SpongeBob flood
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+# Force System Accent to Hot Pink (#FF69B4)
+settings put secure sysui_theme_customization '{"android.theme.customization.accent_color":"#FF69B4","android.theme.customization.system_palette":"#00CED1"}'
+
+# Force the "Cyber-Cathedral" wallpaper to stay pinned
+cmd wallpaper set /sdcard/Pictures/Neon_Pink_Church.jpg
+# Reserve the bottom 35% of the screen for the keyboard so it's 'Physical'
+# (The last number 700 is the height—adjust based on your screen)
+wm overscan 0,0,0,700
+
+# Crank the mechanical haptics to max for the 'Click' feel
+settings put system haptic_feedback_intensity 3
+# Create the folders for the high-gloss aesthetic
+mkdir -p /sdcard/Advanced_Library/South_Park_Lore
+mkdir -p /sdcard/Advanced_Library/SpongeBob_Buddies
+mkdir -p /sdcard/Advanced_Library/Catholic_Icons
+
+# Grant your Shimeji (Desktop Buddies) permission to flood the screen
+appops set com.shimeji.pack SYSTEM_ALERT_WINDOW allow
+#!/bin/bash
+echo "DELETING MINIMALISM..."
+echo "LOADING AYN THOR HARDWARE PROFILE..."
+wm density 260
+settings put secure ui_night_mode 2
+# Launch Launcher95 Pro (Windows Aesthetic)
+am start -n com.launcher95.pro/.MainActivity
+# Launch Steam Deck Gamepad UI (Steam Deck Aesthetic)
+am start -n com.valvesoftware.android.steam.community/com.valvesoftware.steam.Main --es "args" "-gamepadui"
+# Force Tappy Keyboard to stay active
+ime set com.tappy.keyboard/.TappyIME
+echo "OS LOADED: CLUTTER ENGAGED."
+# Spoof the device as a vintage Nokia/Sony hybrid for legacy app support
+setprop ro.product.model "Sony-Nokia-Thor-X"
+setprop ro.product.manufacturer "Custom-Y2K"
+
+# Force the GPU to render with high saturation (Iridescent Walkman vibe)
+setprop debug.egl.buffercount 4
+setprop persist.sys.ui.hw 1
+# Spoof the device as a vintage Nokia/Sony hybrid for legacy app support
+setprop ro.product.model "Sony-Nokia-Thor-X"
+setprop ro.product.manufacturer "Custom-Y2K"
+
+# Force the GPU to render with high saturation (Iridescent Walkman vibe)
+setprop debug.egl.buffercount 4
+setprop persist.sys.ui.hw 1
+# Set the Launcher95 Pro (Start Menu) to sit on top of everything
+appops set com.launcher95.pro SYSTEM_ALERT_WINDOW allow
+
+# Force a 4:3 Aspect Ratio (Retro Monitor feel)
+wm size 1440x1920
+
+# Pack the screen with tiny icons (Extreme PC Clutter)
+wm density 220
+# Create the permanent physical space for Tappy Keyboard
+# This keeps your Windows/Steam Deck UI from sliding under your fingers
+wm overscan 0,0,0,800
+
+# Force the Tappy Keyboard to stay "Always On"
+settings put secure show_ime_with_hard_keyboard 1
+# Force Hi-Res Audio Output (24-bit / 192kHz simulation)
+setprop persist.audio.hifi true
+setprop audio.offload.pcm.16bit.enable 0
+setprop audio.offload.pcm.24bit.enable 1
+#!/bin/bash
+echo "SYSTEM OVERRIDE: BOOTING OMNI-OS (Thor/Win10/Deck/BB)..."
+
+# 1. Aesthetics Injection
+cmd wallpaper set /sdcard/Pictures/Neon_Sakura_Circuits.jpg
+settings put secure sysui_theme_customization '{"android.theme.customization.accent_color":"#FF69B4"}'
+
+# 2. Layout Overhaul
+wm density 240
+settings put global enable_freeform_support 1
+
+# 3. Boot Software Stack
+am start -n com.launcher95.pro/.MainActivity      # The Windows Logic
+am start -n com.valvesoftware.steam.Main          # The Deck Logic
+am start -n com.tappy.keyboard/.TappyIME          # The BlackBerry Logic
+
+echo "NO MINIMALISM DETECTED. OS IS LIVE."
+mkdir -p /sdcard/OMNI_OS/SOUTH_PARK_ASSETS
+mkdir -p /sdcard/OMNI_OS/SPONGEBOB_COLLECTIBLES
+mkdir -p /sdcard/OMNI_OS/CATHOLIC_ICONOGRAPHY
+mkdir -p /sdcard/OMNI_OS/STEAM_DECK_ROMS
+# Set the resolution to a wide-quad ratio for that Passport feel
+# This will create black bars or 'bezel space' for your physical logic
+wm size 1440x1440
+
+# Increase density to pack the screen with the Fujitsu/Vaio windows
+wm density 360
+# Force 'Freeform Windows' into high-gear
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+
+# Grant 'Draw Over Other Apps' to the entire OS stack
+appops set com.launcher95.pro SYSTEM_ALERT_WINDOW allow
+appops set com.valvesoftware.android.steam.community SYSTEM_ALERT_WINDOW allow
+#!/bin/bash
+echo "INITIATING OMNI-OS BOOTLOADER..."
+echo "PROFILE: WINDOWS-THOR-BLACKBERRY-VAIO"
+
+# 1. Force the Hot Pink / Iridescent Palette
+settings put secure sysui_theme_customization '{"android.theme.customization.accent_color":"#FF69B4","android.theme.customization.system_palette":"#00FFFF"}'
+
+# 2. Overscan for the 'Physical' Keyboard feel
+wm overscan 0,0,0,850
+
+# 3. Boot the Software Layers simultaneously
+am start -n com.launcher95.pro/.MainActivity      # Win10 Desktop
+am start -n com.tappy.keyboard/.TappyIME          # BlackBerry Input
+am start -n com.valvesoftware.steam.Main          # Steam Deck Gaming
+am start -n com.shimeji.pack/.ShimejiActivity     # SpongeBob/SouthPark Buddies
+
+echo "OS CONVERSION COMPLETE. NO MINIMALISM ALLOWED."
+# Create the "Library" hierarchy
+mkdir -p /sdcard/Advanced_Library/Retro_Handheld_ROMS
+mkdir -p /sdcard/Advanced_Library/SpongeBob_Lore_Assets
+mkdir -p /sdcard/Advanced_Library/South_Park_Vibe_Assets
+mkdir -p /sdcard/Advanced_Library/Cyber_Cathedral_Icons
+# Spoof the hardware as a high-end Sony/AYN Hybrid
+setprop ro.product.model "Vaio-Thor-Z1"
+setprop ro.product.manufacturer "Sony-AYN"
+
+# Disable all 'Minimalist' power saving (Full Power for all games)
+settings put global power_manager_constants "no_light_sensor=true,vibration_intensity=255"
+setprop debug.egl.hw 1
+# Spoof the hardware as a high-end Sony/AYN Hybrid
+setprop ro.product.model "Vaio-Thor-Z1"
+setprop ro.product.manufacturer "Sony-AYN"
+
+# Disable all 'Minimalist' power saving (Full Power for all games)
+settings put global power_manager_constants "no_light_sensor=true,vibration_intensity=255"
+setprop debug.egl.hw 1
+# Force the square aspect ratio (BlackBerry Passport vibe)
+wm size 1440x1440
+
+# Increase density to make windows and text tiny like a UMPC
+wm density 360
+# Force Freeform Windows and Resizable Activities
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+
+# Launch Launcher95 Pro (Start Menu) as a persistent system layer
+appops set com.launcher95.pro SYSTEM_ALERT_WINDOW allow
+am start -n com.launcher95.pro/.MainActivity
+# Force Hi-Res Audio Buffering
+setprop persist.audio.hifi true
+setprop audio.offload.pcm.24bit.enable 1
+setprop audio.offload.buffer.size.kb 128
+#!/bin/bash
+echo "INITIATING OMNI-OS: [WIN10 | THOR | DECK | BLACKBERRY]"
+
+# 1. Aesthetics & Hardware spoofing
+settings put secure sysui_theme_customization '{"android.theme.customization.accent_color":"#FF69B4"}'
+cmd wallpaper set /sdcard/Pictures/Cyber_Sakura_Circuit.jpg
+
+# 2. Geometry Overhaul
+wm size 1440x1440
+wm density 340
+wm overscan 0,0,0,850
+
+# 3. Boot Software Stack
+am start -n com.launcher95.pro/.MainActivity      # The Start Menu
+am start -n com.valvesoftware.steam.Main          # The Steam Deck UI
+am start -n com.tappy.keyboard/.TappyIME          # The Physical Logic
+am start -n com.shimeji.pack/.ShimejiActivity     # The Desktop Buddies
+
+echo "OS CONVERSION SUCCESSFUL. NO MINIMALISM REMAINING."
+# Force overlapping freeform windows (Windows 10 logic)
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+
+# Launch Launcher95 Pro and force it to be the "Start Menu" layer
+am start -n com.launcher95.pro/.MainActivity --windowingMode 5
+# Create the shrine for your maximalist assets
+mkdir -p /sdcard/OMNI_OS/SOUTH_PARK_LORE
+mkdir -p /sdcard/OMNI_OS/SPONGEBOB_COLLECTIBLES
+mkdir -p /sdcard/OMNI_OS/CATHOLIC_CATHEDRAL_GLASS
+mkdir -p /sdcard/OMNI_OS/VAIO_SYSTEM_FILES
+
+# Grant your Shimeji buddies permission to crawl all over the UI (220698.jpg)
+appops set com.shimeji.pack SYSTEM_ALERT_WINDOW allow
+#!/bin/bash
+echo "INITIATING OMNI-OS BOOT..."
+echo "IDENTITY: WINDOWS 10 x SONY VAIO x BLACKBERRY PASSPORT"
+
+# 1. Kill Minimalism & Set Geometry
+wm size 1440x1440
+wm density 340
+wm overscan 0,0,0,850
+
+# 2. Boot Software Ecosystem
+am start -n com.launcher95.pro/.MainActivity      # The Desktop
+am start -n com.tappy.keyboard/.TappyIME          # The Physical Logic
+am start -n com.valvesoftware.steam.Main          # The Steam Deck UI
+am start -n com.shimeji.pack/.ShimejiActivity     # The Chaos Buddies
+
+echo "OS CONVERSION SUCCESSFUL. VIBE: IRIDESCENT CLUTTER."
+# Force 24-bit high-fidelity audio output
+setprop persist.audio.hifi true
+setprop audio.offload.pcm.24bit.enable 1
+setprop audio.offload.buffer.size.kb 256
+# Grant overlay permissions for the Shimeji / Desktop Buddy engine
+appops set com.shimeji.pack SYSTEM_ALERT_WINDOW allow
+
+# Create the dedicated South Park asset directory in your Omni-OS root
+mkdir -p /sdcard/OMNI_OS/SOUTH_PARK_SYSTEM/ANIMATIONS
+
+# Command to force-launch the buddy engine in the background
+am startservice -n com.shimeji.pack/.services.ShimejiService
+# Create the icon map directory
+mkdir -p /sdcard/OMNI_OS/SOUTH_PARK_SYSTEM/ICONS
+
+# Example: Use a-shell to link your 'Games' folder to a Cartman icon
+# Note: Requires Launcher95 Pro to be pointed to this directory
+ln -s /sdcard/OMNI_OS/SOUTH_PARK_SYSTEM/ICONS/cartman_face.png /sdcard/Desktop/Games_Icon.png
+# Replace the boot animation (Requires Root / High-Level A-Shell access)
+# Warning: Ensure the zip is correctly formatted for your resolution
+cp /sdcard/OMNI_OS/SOUTH_PARK_SYSTEM/bootanimation.zip /system/media/bootanimation.zip
+
+# Set permissions so the system can read the new boot sequence
+chmod 644 /system/media/bootanimation.zip
+# Force a South Park maximalist wallpaper with Hot Pink (220731.jpg) accents
+cmd wallpaper set /sdcard/OMNI_OS/SOUTH_PARK_SYSTEM/maximalist_sp_pink.jpg
+
+# Force Launcher95 Pro to use 'Pink' text for the South Park aesthetic
+settings put secure sysui_theme_customization '{"android.theme.customization.accent_color":"#FF69B4"}'
+# Create the South Park 'Life Support' directory
+mkdir -p /sdcard/OMNI_OS/SOUTH_PARK_SYSTEM/TAMAGOTCHI/DATA
+mkdir -p /sdcard/OMNI_OS/SOUTH_PARK_SYSTEM/TAMAGOTCHI/SPRITES
+
+# Grant the buddy engine permission to stay visible during Steam Deck gaming
+appops set com.shimeji.pack SYSTEM_ALERT_WINDOW allow
+
+# Force launch the 'Pet' service as a background process
+am startservice -n com.shimeji.pack/.services.ShimejiService
+# Map the 'F' key (Feed) and 'P' key (Play) to trigger Cartman animations
+# Note: This sends a broadcast to the overlay engine
+am broadcast -a com.shimeji.pack.ACTION_FEED --es "character" "cartman"
+am broadcast -a com.shimeji.pack.ACTION_PLAY --es "character" "cartman"
+# Force the Tamagotchi window into a specific floating coordinate (Top Right)
+# This keeps it visible while you're in the Steam Deck UI
+settings put global freeform_window_orientation 1
+am start -n com.shimeji.pack/.ShimejiActivity --windowingMode 5 --bounds 800,100,1200,500
+# Map hungry/angry triggers to South Park audio files
+setprop ro.config.low_battery_sound /sdcard/OMNI_OS/SOUTH_PARK_SYSTEM/AUDIO/cartman_beef_cake.mp3
+setprop ro.config.notification_sound /sdcard/OMNI_OS/SOUTH_PARK_SYSTEM/AUDIO/cartman_screaming.mp3
+#!/bin/bash
+echo "LOADING CARTMAN VIRTUAL PET MODULE..."
+# Inject Sprites
+cp /sdcard/OMNI_OS/SOUTH_PARK_SYSTEM/TAMAGOTCHI/SPRITES/cartman_idle.gif /data/data/com.shimeji.pack/files/
+# Launch Overlay
+am start -n com.shimeji.pack/.ShimejiActivity
+echo "CARTMAN IS NOW ACTIVE ON YOUR DESKTOP."
+# Force the system to render high-quality blurs (Aero Glass effect)
+settings put global window_animation_scale 0.5
+setprop persist.sys.ui.hw 1
+
+# Force the "Sakura-Cyber" Hot Pink to blend with "Icy Blue" for that liquid vibe
+settings put secure sysui_theme_customization '{"android.theme.customization.accent_color":"#FF69B4","android.theme.customization.system_palette":"#00BFFF"}'
+# Set screen density to 'Densely Packed' for the UMPC feel
+wm density 380
+
+# Grant 'Always-on-top' permission for the Shrine/Icon widgets
+appops set com.launcher95.pro SYSTEM_ALERT_WINDOW allow
+
+# Enable overlapping freeform windows so icons can literally stack
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+# Create the High-Gloss Library structure
+mkdir -p /sdcard/OMNI_OS/ADVANCED_LIBRARY/CATHOLIC_SHRINE/GLOSSY_ICONS
+mkdir -p /sdcard/OMNI_OS/ADVANCED_LIBRARY/CATHOLIC_SHRINE/STAINED_GLASS_VIBE
+
+# Link your "Library" folder to a high-gloss Cross icon from your references
+ln -s /sdcard/OMNI_OS/ADVANCED_LIBRARY/CATHOLIC_SHRINE/GLOSSY_ICONS/cross_neon.png /sdcard/Desktop/Library_Icon.png
+# Spoof hardware to unlock handheld-specific 'Game Modes'
+setprop ro.product.model "Thor-Aero-S"
+setprop ro.product.brand "Ayn-Vaio"
+
+# Force GPU into high-saturation mode to make the neon pinks and blues "pop"
+setprop debug.egl.buffercount 4
+setprop persist.sys.use_dithering 1
+#!/bin/bash
+echo "BOOTING OMNI-OS: SACRED CYBER-UMPC EDITION..."
+
+# 1. Aesthetics Injection
+cmd wallpaper set /sdcard/OMNI_OS/ADVANCED_LIBRARY/CATHOLIC_SHRINE/stained_glass_pink.jpg
+settings put secure ui_night_mode 2
+
+# 2. Geometry & Input (BlackBerry/Thor hybrid)
+wm size 1440x1920
+wm density 360
+wm overscan 0,0,0,800 # Reserve space for Tappy Keyboard
+
+# 3. Launch the Clutter
+am start -n com.launcher95.pro/.MainActivity      # Win10 Logic
+am start -n com.valvesoftware.steam.Main          # Steam Deck Logic
+am start -n com.shimeji.pack/.ShimejiActivity     # Cartman & Icon Overlays
+
+echo "MINIMALISM PURGED. CLUTTER IS HOLY."
+# Force the Cartman-Gotchi overlay to use 'Stained Glass' transparency
+am broadcast -a com.shimeji.pack.SET_BACKGROUND --es "path" "/sdcard/OMNI_OS/ADVANCED_LIBRARY/CATHOLIC_SHRINE/glass_bg.png"
+# Force high-quality hardware blurs for a 'Glass' feel
+setprop persist.sys.ui.hw 1
+setprop debug.sf.enable_gl_backpressure 1
+
+# Force the Icy Blue and Deep Magenta palette (from 220751.jpg)
+settings put secure sysui_theme_customization '{"android.theme.customization.accent_color":"#FF00FF","android.theme.customization.system_palette":"#00008B"}'
+# Pack the density so the glass icons look sharp and tiny
+wm density 400
+
+# Grant 'Draw Over Other Apps' to your icon engine
+appops set com.launcher95.pro SYSTEM_ALERT_WINDOW allow
+
+# Enable overlapping freeform windows (The 'PC' feel)
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+# Create the directories for the 'Wet' aesthetic
+mkdir -p /sdcard/OMNI_OS/ADVANCED_LIBRARY/LIQUID_GLOSS/WATER_DROPLETS
+mkdir -p /sdcard/OMNI_OS/ADVANCED_LIBRARY/LIQUID_GLOSS/NEON_SHRINE
+
+# Move your 'Cartman-Gotchi' into a stained-glass frame
+am broadcast -a com.shimeji.pack.SET_FRAME --es "type" "glowing_glass"
+#!/bin/bash
+echo "INITIATING SACRED-CYBER OS CONVERSION..."
+
+# 1. Aesthetics Injection (Reference 220751.jpg)
+cmd wallpaper set /sdcard/OMNI_OS/ADVANCED_LIBRARY/LIQUID_GLOSS/blue_magenta_shrine.jpg
+settings put secure ui_night_mode 2
+
+# 2. Hardware Identity (Thor x Vaio)
+setprop ro.product.model "Thor-Aero-X"
+wm size 1440x1920
+wm overscan 0,0,0,800 # BlackBerry Keyboard Space
+
+# 3. Launch the Clutter Stack
+am start -n com.launcher95.pro/.MainActivity      # Win10 Desktop
+am start -n com.valvesoftware.steam.Main          # Steam Deck Gaming
+am start -n com.shimeji.pack/.ShimejiActivity     # Floating Catholic/SP Icons
+
+echo "MINIMALISM WIPED. SYSTEM IS NOW GLOSSY AND SACRED."
+# Disable the stock launcher completely (Replace 'com.google.android.apps.nexuslauncher' with your phone's stock launcher package if different)
+pm disable-user --user 0 com.google.android.apps.nexuslauncher
+
+# Force Launcher95 Pro to be the 'Top' process
+am start -n com.launcher95.pro/.MainActivity
+# This forces a hardware display reset - your screen will flicker
+wm density 420 && wm size 1440x1920
+
+# Force 'Freeform' mode to be active at the system level
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+# Hard-lock Hot Pink accents and Deep Blue backgrounds
+settings put secure sysui_theme_customization '{"android.theme.customization.accent_color":"#FF1493","android.theme.customization.system_palette":"#00008B","android.theme.customization.color_source":"preset"}'
+
+# Force the "Liquid Glass" wallpaper to override the system default
+cmd wallpaper set /sdcard/OMNI_OS/ADVANCED_LIBRARY/LIQUID_GLOSS/blue_magenta_shrine.jpg
+# Grant 'Draw Over Other Apps' and 'Ignore Battery Optimization' (Prevents the system from killing them)
+appops set com.shimeji.pack SYSTEM_ALERT_WINDOW allow
+dumpsys deviceidle whitelist +com.shimeji.pack
+
+# Force-launch the buddy service
+am startservice -n com.shimeji.pack/.services.ShimejiService
+# Increase the bottom dead-zone (The last number is the height)
+wm overscan 0,0,0,1000
+
+# Force the Tappy Keyboard to be the ONLY input method
+ime enable com.tappy.keyboard/.TappyIME
+ime set com.tappy.keyboard/.TappyIME
+echo "FORCING SYSTEM OVERRIDE..."
+settings put global transition_animation_scale 0.5
+settings put global window_animation_scale 0.5
+am force-stop com.android.systemui
+wm density 380
+am start -n com.launcher95.pro/.MainActivity
+echo "UI REFRESHED. CLUTTER ENGAGED."
+# Force-enable the Windows 10 style windowing at the kernel level
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+settings put global freeform_window_orientation 0
+# Lock the 'Sakura-Cyber' palette into the secure settings table
+settings put secure sysui_theme_customization '{"android.theme.customization.accent_color":"#FF1493","android.theme.customization.system_palette":"#00008B","android.theme.customization.color_source":"preset"}'
+# Push the entire OS up by 1000 pixels
+wm overscan 0,0,0,1000
+
+# Set Tappy as the permanent master input
+ime enable com.tappy.keyboard/.TappyIME
+ime set com.tappy.keyboard/.TappyIME
+#!/bin/bash
+echo "PURGING MINIMALISM... BOOTING OMNI-OS."
+
+# 1. UI SHOCK
+settings put global transition_animation_scale 0.5
+settings put global window_animation_scale 0.5
+wm density 420
+
+# 2. OVERLAY PERMISSIONS (For Cartman & Icons)
+appops set com.shimeji.pack SYSTEM_ALERT_WINDOW allow
+appops set com.launcher95.pro SYSTEM_ALERT_WINDOW allow
+
+# 3. LAUNCH ALL LAYERS
+am start -n com.launcher95.pro/.MainActivity      # PC Interface
+am start -n com.valvesoftware.steam.Main          # Game Interface
+am startservice -n com.shimeji.pack/.services.ShimejiService # Buddy Interface
+
+echo "SYSTEM OVERRIDDEN. VIBE LOCKED."
+# Force Desktop Mode Logic
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+# This makes the font and icons small and professional (BlackBerry style)
+wm density 480 
+# Set System Accent to Neon Pink
+settings put secure sysui_type_accent_color #FF00FF
+
+# Set System Backgrounds to Deep Midnight Blue
+settings put secure sysui_type_background_color #000033
+
+# Force "Vibrant" contrast (Android 15+)
+settings put secure ui_night_mode 2 # Force Dark Mode
+settings put secure theme_customization_overlay_packages '{"android.theme.customization.color_both":"1","android.theme.customization.color_source":"#FF00FF","android.theme.customization.theme_style":"VIBRANT"}'
+# --- THE CYBER-THOR MANIFEST ---
+
+# 1. Futuristic Info Density (BlackBerry/Thor Style)
+# Makes your screen feel like a high-end handheld PC
+wm density 450 
+
+# 2. The "Cotton Candy" Hex Injection 
+# Background: Deep Midnight (#000033) | Accent: Neon Pink (#FF1493)
+settings put secure theme_customization_overlay_packages '{"android.theme.customization.color_both":"1","android.theme.customization.color_source":"#FF1493","android.theme.customization.theme_style":"VIBRANT"}'
+
+# 3. Ayn Thor Performance Logic
+# Force the CPU to stay snappy and animations to be "Instant"
+settings put global window_animation_scale 0.1
+settings put global transition_animation_scale 0.1
+settings put global animator_duration_scale 0.1
+
+# 4. Windows-Style Multitasking
+# Allows you to "Stack" windows like a PC
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+
+echo "Thor-Vibe Manifest Deployed Successfully."
+# --- ARCHITECTURE OVERRIDE ---
+# Force "Game Driver" logic for the entire System UI (smoother bluish-pinkish gradients)
+settings put global updatable_driver_all_apps 1
+
+# --- INPUT PRECISION (BlackBerry/Handheld PC Style) ---
+# Disable "Touch Exploration" and "Pointer Acceleration" for raw, robotic input feel
+settings put system pointer_speed 7
+settings put secure long_press_timeout 200 # Makes the UI feel incredibly responsive
+
+# --- ADVANCED WINDOWING ---
+# Allow windows to overlap and "Snap" like Windows 11
+settings put global pinner_flags 1
+# --- PC-DENSITY OVERRIDE ---
+# Makes the phone feel like a tiny Panasonic Let's Note screen
+wm density 540
+
+# --- WINDOW SNAPPING ---
+# Force Windows-style "Snap" behavior for multi-tasking
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+# --- CARTMAN X Y2K NEON MATRIX ---
+# Cyan (#00B8C4) Base | Pink (#EE3253) Accents | Yellow (#FFE11D) Highlights
+# The 'VIBRANT' style creates those high-contrast 2000s "Glossy" gradients.
+settings put secure theme_customization_overlay_packages '{"android.theme.customization.system_palette":"#00B8C4","android.theme.customization.accent_color":"#EE3253","android.theme.customization.theme_style":"VIBRANT","android.theme.customization.color_both":"1"}'
+
+# --- THE "GLOSS" EFFECT ---
+# Panasonic Let's Note screens were high-glare. We mimic this by forcing 
+# maximum transparency and blur on all system windows.
+settings put global disable_window_blurs 0
+settings put secure accessibility_reduce_transparency 0
+# --- ULTRA-DENSE INDUSTRIAL UI ---
+# This makes your phone look like a 10-inch laptop screen.
+# 420 is the "Pro" level; it will make your Cartman theme look sharper.
+420 wm density
+
+# --- STEAM DECK PERFORMANCE LAYER ---
+# Disable "GOS" (Game Optimizing Service) throttling via shell
+settings put global game_driver_all_apps 1
+settings put global updatable_driver_all_apps 1
+
+# Force 120Hz Refresh Rate globally (for that "liquid" Steam Deck feel)
+settings put global peak_refresh_rate 120.0
+settings put global min_refresh_rate 120.0
+
+# Increase touch sampling rate for "Pro" response times
+settings put system pointer_speed 10
+settings put global window_animation_scale 0.0
+settings put global transition_animation_scale 0.0
+settings put global animator_duration_scale 0.0
+settings put global show_processes 1
+settings put global dynamic_interval_control 0
+settings put peak_refresh_rate 120.0
+settings put secure notification_bubbles 0
+settings put secure accessibility_display_daltonizer_enabled 1
+settings put secure accessibility_display_daltonizer 0
+settings put secure com.sec.android.app.launcher.grid_size 6x6
+settings put navigation_bar_height 24
+settings put secure accessibility_display_daltonizer_enabled 1
+settings put secure theme_customization_overlay_packages '{"android.theme.customization.system_palette":"#00B8C4","android.theme.customization.accent_color":"#FF91AF","android.theme.customization.theme_style":"EXPRESSIVE"}'
+settings put secure accessibility_display_high_contrast_text 1
+settings put global low_power_backlight_brightness 255
+settings put system screen_brightness_mode 1
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+settings put secure show_ime_with_hard_keyboard 1
+settings put system peak_refresh_rate 120.0
+setprop debug.hwui.renderer skiavksettings put system font_family "monospace"settings put secure accessibility_display_high_contrast_text 1settings put global continuity_mode 1settings put secure theme_customization_overlay_packages '{"android.theme.customization.system_palette":"#FF91AF","android.theme.customization.accent_color":"#00B8C4","android.theme.customization.theme_style":"EXPRESSIVE"}'
+settings put system font_family "serif"theme_customization_overlay_packages '{"android.theme.customization.system_palette":"#FF91AF","android.theme.customization.accent_color":"#00B8C4"}'# Set Launcher95 Pro as the default home app
+pm set-home-activity com.launcher95.pro
+
+# Force the screen density lower to pack more icons/windows onto the screen (PC feel)
+wm density 220
+
+# Enable Android's hidden freeform window mode for overlapping, drag-and-drop windows
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+# Force system accent color to Hot Pink (#FF69B4)
+settings put secure sysui_theme_customization '{"android.theme.customization.system_palette":"#FF69B4"}'
+
+# Force the system into Dark Mode to contrast with the neon pink (Library/Y2K vibe)
+settings put secure ui_night_mode 2
+# Enable the Tappy keyboard
+ime enable com.tappy.keyboard/.TappyIME
+
+# Set Tappy as the active default keyboard
+ime set com.tappy.keyboard/.TappyIME
+
+# Maximize system haptic feedback to mimic physical button clicks
+settings put system haptic_feedback_enabled 1
+settings put system haptic_feedback_intensity 3
+# Create the heavy Catholic Library aesthetic wallpaper directories
+mkdir -p /sdcard/Pictures/Aesthetic/Catholic_Library_PinkNeon
+mkdir -p /sdcard/Pictures/Aesthetic/Z_Flip_Widgets
+
+# Create directories for 2000s media and custom cursor files
+mkdir -p /sdcard/Icons/Custom_Cursors
+mkdir -p /sdcard/Pictures/Aesthetic/SouthPark_Y2K
+mkdir -p /sdcard/Pictures/Aesthetic/SpongeBob_Lore
+
+# Create the folder for your Shimeji desktop buddies
+mkdir -p /sdcard/Shimeji/Characters/SpongeBob
+mkdir -p /sdcard/Shimeji/Characters/Cartman
+# Set a custom Device Name to 'AYN Thor'
+settings put global device_name "AYN Thor"
+
+# Force the screen density to simulate a high-res handheld (makes icons/windows smaller and more 'PC-like')
+# Try 320 or 280 for a more 'cluttered' maximalist look
+wm density 300
+
+# Force the resolution to a 16:9 or 4:3 ratio if you want that retro 2000s monitor feel
+# (Example for a standard 1080p height)
+wm size 1080x1920
+# Set Launcher95 Pro as the absolute system master
+pm set-home-activity com.launcher95.pro
+
+# Enable 'Freeform Windows' so you can have South Park and SpongeBob apps 
+# floating over each other like a real Windows 10 PC
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+
+# Force the Status Bar to stay visible even in 'fullscreen' games (for that 2000s taskbar look)
+settings put global policy_control immersive.full=*
+# Create the asset structure
+mkdir -p /sdcard/Windows10_Project/SpongeBob_Assets
+mkdir -p /sdcard/Windows10_Project/SouthPark_Assets
+mkdir -p /sdcard/Windows10_Project/Religious_Icons
+mkdir -p /sdcard/Windows10_Project/Custom_Cursors
+
+# Move to the project folder to start editing
+cd /sdcard/Windows10_Project/
+# Enable and set Tappy as the primary input method
+ime enable com.tappy.keyboard/.TappyIME
+ime set com.tappy.keyboard/.TappyIME
+
+# Maximize the haptic 'click' to feel like a plastic BlackBerry key
+settings put system haptic_feedback_enabled 1
+settings put system haptic_feedback_intensity 3
+# Grant 'Draw Over Other Apps' permission to your widget/launcher app
+appops set com.launcher95.pro SYSTEM_ALERT_WINDOW allow
+
+# Force a persistent 'Cover Screen' style notification
+settings put secure lock_screen_show_notifications 1
+# Force the system to identify as a gaming handheld for better app compatibility
+setprop ro.product.model "AYN Thor Max"
+setprop ro.product.brand "ayn"
+setprop ro.product.manufacturer "ayntec"
+
+# Force high-performance 'Gaming Mode' on the CPU (if rooted)
+setprop debug.egl.hw 1
+setprop persist.sys.composition.type gpu
+
+# Set the screen to a 2000s PC aspect ratio (cluttered desktop feel)
+wm size 1080x1920
+wm density 320
+# Force the Steam app to boot directly into the Steam Deck 'Gamepad UI'
+# Note: Requires Steam installed via Winlator or an ARM build
+am start -n com.valvesoftware.android.steam.community/com.valvesoftware.steam.Main --es "args" "-gamepadui"
+
+# Ensure the system treats the Volume/Power buttons as 'Steam' and 'Quick Access' buttons
+settings put global policy_control immersive.full=* ```
+
+### 3. Windows 10 Environment (Winlator x A-Shell Bridge)
+To run "Every and any game," you need a container. Use these commands to prep the file system for the Windows 10 x86 environment.
+
+```bash
+# Create the Root Directory for Windows 10 C: Drive simulation
+mkdir -p /sdcard/Win10_OS/System32
+mkdir -p /sdcard/Win10_OS/Users/Adriel/Desktop
+
+# Grant 'A-Shell' deep filesystem access to the Windows Container
+appops set com.winlator MANAGE_EXTERNAL_STORAGE allow
+
+# Command to boot your Windows 10 container from the shell
+am start -n com.winlator/.MainActivity
+# Force the Tappy Keyboard to stay 'Persistent' (it never hides)
+settings put secure show_ime_with_hard_keyboard 1
+
+# Increase Haptic feedback to 11 for that 'Mechanical Click' feel
+settings put system haptic_feedback_intensity 3
+settings put system haptic_feedback_enabled 1
+# Create the South Park / SpongeBob 'Desktop Buddy' trigger
+# This allows them to spawn over your Windows 10 and Steam Deck UI
+appops set com.shimeji.pack SYSTEM_ALERT_WINDOW allow
+
+# Set the 'Catholic Library' Wallpaper via Shell
+# Replace 'wallpaper.jpg' with your specific file path
+termux-wallpaper -f /sdcard/Windows10_Project/Religious_Icons/cathedral_pink.jpg
+
+# Force Hot Pink system accents over the Windows Blue
+settings put secure sysui_theme_customization '{"android.theme.customization.accent_color":"#FF69B4"}'
+#!/bin/bash
+echo "Initializing Custom OS: Windows-Thor-Deck-BlackBerry Hybrid..."
+wm density 300
+settings put global enable_freeform_support 1
+am start -n com.launcher95.pro/com.launcher95.MainActivity
+am start -n com.tappy.keyboard/.TappyIME
+echo "OS Loaded. No Minimalism Detected."
+# Force the system to identify as AYN Thor for optimized driver access
+setprop ro.product.model "AYN Thor Max"
+setprop ro.product.manufacturer "AYN"
+
+
+# Force GPU to render at Max Frequency for "Every and Any Game"
+setprop debug.egl.hw 1
+setprop debug.gr.num_common_buffers 3
+# Enable 'Desktop Windowing' (Android 16 style) for overlapping PC windows
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+
+# Force Steam Deck 'Game Mode' UI to launch on top of everything
+am start -n com.valvesoftware.android.steam.community/com.valvesoftware.steam.Main --es "args" "-gamepadui"
+
+# Launch Launcher95 Pro in a pinned 'floating window' to act as the Start Menu
+am start -n com.launcher95.pro/.MainActivity --windowingMode 5
+# Force Hi-Fi Audio Bitrate (High Quality Music Profile)
+setprop persist.audio.hifi true
+setprop audio.offload.pcm.16bit.enable 1
+
+# If you use a parametric EQ app like JamesDSP or Wavelet, use this to 
+# ensure the 'Library' acoustics are never killed by the system
+pm grant com.james.dsp android.permission.WRITE_SECURE_SETTINGS
+appops set com.james.dsp REQUEST_IGNORE_BATTERY_OPTIMIZATIONS allow
+# Reserve the bottom 30% of the screen for the Tappy Keyboard (Manual Overscan)
+# Note: Adjust 'bottom' value (the last number) based on your phone's height
+wm overscan 0,0,0,380
+
+# Force the IME (Keyboard) to stay active even when a Mouse/Controller is plugged in
+settings put secure show_ime_with_hard_keyboard 1
+# Create the 'Shrine' directories for your imagery
+mkdir -p /sdcard/OS_ASSETS/RELIGIOUS_MAXIMALISM
+mkdir -p /sdcard/OS_ASSETS/SOUTH_PARK_VIBE
+mkdir -p /sdcard/OS_ASSETS/SPONGEBOB_COLLECTIBLES
+
+# Force 'Themed Icons' to match the Pink/Blue palette across the OS
+settings put secure themed_icon_color "-65292" # Hex for Hot Pink
+echo "DELETING MINIMALISM..."
+wm density 340
+wm size 1080x2100
+settings put secure ui_night_mode 2
+settings put global window_animation_scale 0.5
+am start -n com.launcher95.pro/.MainActivity
+ime set com.tappy.keyboard/.TappyIME
+echo "AYN THOR / WIN10 / BLACKBERRY HYBRID LOADED."
+# Crank the density so icons are small and the screen feels huge like a PC
+wm density 240
+
+# Enable overlapping windows (Freeform Mode) for the South Park/SpongeBob flood
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+# Force System Accent to Hot Pink (#FF69B4)
+settings put secure sysui_theme_customization '{"android.theme.customization.accent_color":"#FF69B4","android.theme.customization.system_palette":"#00CED1"}'
+
+# Reserve the bottom 35% of the screen for the keyboard so it's 'Physical'
+# (The last number 700 is the height—adjust based on your screen)
+wm overscan 0,0,0,700
+
+# Crank the mechanical haptics to max for the 'Click' feel
+settings put system haptic_feedback_intensity 3
+# Create the folders for the high-gloss aesthetic
+mkdir -p /sdcard/Advanced_Library/South_Park_Lore
+mkdir -p /sdcard/Advanced_Library/SpongeBob_Buddies
+mkdir -p /sdcard/Advanced_Library/Catholic_Icons
+
+# Grant your Shimeji (Desktop Buddies) permission to flood the screen
+appops set com.shimeji.pack SYSTEM_ALERT_WINDOW allow
+#!/bin/bash
+echo "DELETING MINIMALISM..."
+echo "LOADING AYN THOR HARDWARE PROFILE..."
+wm density 260
+settings put secure ui_night_mode 2
+# Launch Launcher95 Pro (Windows Aesthetic)
+am start -n com.launcher95.pro/.MainActivity
+# Launch Steam Deck Gamepad UI (Steam Deck Aesthetic)
+am start -n com.valvesoftware.android.steam.community/com.valvesoftware.steam.Main --es "args" "-gamepadui"
+# Force Tappy Keyboard to stay active
+ime set com.tappy.keyboard/.TappyIME
+echo "OS LOADED: CLUTTER ENGAGED."
+# Spoof the device as a vintage Nokia/Sony hybrid for legacy app support
+setprop ro.product.model "Sony-Nokia-Thor-X"
+setprop ro.product.manufacturer "Custom-Y2K"
+
+# Force the GPU to render with high saturation (Iridescent Walkman vibe)
+setprop debug.egl.buffercount 4
+setprop persist.sys.ui.hw 1
+# Set the Launcher95 Pro (Start Menu) to sit on top of everything
+appops set com.launcher95.pro SYSTEM_ALERT_WINDOW allow
+
+# Force a 4:3 Aspect Ratio (Retro Monitor feel)
+wm size 1440x1920
+
+# Pack the screen with tiny icons (Extreme PC Clutter)
+wm density 220
+# Create the permanent physical space for Tappy Keyboard
+# This keeps your Windows/Steam Deck UI from sliding under your fingers
+wm overscan 0,0,0,800
+
+# Force the Tappy Keyboard to stay "Always On"
+settings put secure show_ime_with_hard_keyboard 1
+# Force Hi-Res Audio Output (24-bit / 192kHz simulation)
+setprop persist.audio.hifi true
+setprop audio.offload.pcm.16bit.enable 0
+setprop audio.offload.pcm.24bit.enable 1
+#!/bin/bash
+echo "SYSTEM OVERRIDE: BOOTING OMNI-OS (Thor/Win10/Deck/BB)..."
+
+# 1. Aesthetics Injection
+cmd wallpaper set /sdcard/Pictures/Neon_Sakura_Circuits.jpg
+settings put secure sysui_theme_customization '{"android.theme.customization.accent_color":"#FF69B4"}'
+
+# 2. Layout Overhaul
+wm density 240
+settings put global enable_freeform_support 1
+
+# 3. Boot Software Stack
+am start -n com.launcher95.pro/.MainActivity      # The Windows Logic
+am start -n com.valvesoftware.steam.Main          # The Deck Logic
+am start -n com.tappy.keyboard/.TappyIME          # The BlackBerry Logic
+
+echo "NO MINIMALISM DETECTED. OS IS LIVE."
+mkdir -p /sdcard/OMNI_OS/SOUTH_PARK_ASSETS
+mkdir -p /sdcard/OMNI_OS/SPONGEBOB_COLLECTIBLES
+mkdir -p /sdcard/OMNI_OS/CATHOLIC_ICONOGRAPHY
+mkdir -p /sdcard/OMNI_OS/STEAM_DECK_ROMS
+# Force the system to identify as a High-End Japanese UMPC
+setprop ro.product.model "Thor-Vaio-Hybrid-X"
+setprop ro.product.manufacturer "Sony-AYN"
+
+# Disable Android's "Dynamic Refresh" and force 120Hz/Max Performance
+setprop persist.sys.power.mode 1
+setprop debug.egl.hw 1
+setprop debug.sf.latch_unsignaled 1
+# Set the resolution to a wide-quad ratio for that Passport feel
+# This will create black bars or 'bezel space' for your physical logic
+wm size 1440x1440
+
+# Increase density to pack the screen with the Fujitsu/Vaio windows
+wm density 360
+# Force 'Freeform Windows' into high-gear
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+
+# Grant 'Draw Over Other Apps' to the entire OS stack
+appops set com.launcher95.pro SYSTEM_ALERT_WINDOW allow
+appops set com.valvesoftware.android.steam.community SYSTEM_ALERT_WINDOW allow
+#!/bin/bash
+echo "INITIATING OMNI-OS BOOTLOADER..."
+echo "PROFILE: WINDOWS-THOR-BLACKBERRY-VAIO"
+
+# 1. Force the Hot Pink / Iridescent Palette
+settings put secure sysui_theme_customization '{"android.theme.customization.accent_color":"#FF69B4","android.theme.customization.system_palette":"#00FFFF"}'
+
+# 2. Overscan for the 'Physical' Keyboard feel
+wm overscan 0,0,0,850
+
+# 3. Boot the Software Layers simultaneously
+am start -n com.launcher95.pro/.MainActivity      # Win10 Desktop
+am start -n com.tappy.keyboard/.TappyIME          # BlackBerry Input
+am start -n com.valvesoftware.steam.Main          # Steam Deck Gaming
+am start -n com.shimeji.pack/.ShimejiActivity     # SpongeBob/SouthPark Buddies
+
+echo "OS CONVERSION COMPLETE. NO MINIMALISM ALLOWED."
+# Create the "Library" hierarchy
+mkdir -p /sdcard/Advanced_Library/Retro_Handheld_ROMS
+mkdir -p /sdcard/Advanced_Library/SpongeBob_Lore_Assets
+mkdir -p /sdcard/Advanced_Library/South_Park_Vibe_Assets
+mkdir -p /sdcard/Advanced_Library/Cyber_Cathedral_Icons
+# Spoof the hardware as a high-end Sony/AYN Hybrid
+setprop ro.product.model "Vaio-Thor-Z1"
+setprop ro.product.manufacturer "Sony-AYN"
+
+# Disable all 'Minimalist' power saving (Full Power for all games)
+settings put global power_manager_constants "no_light_sensor=true,vibration_intensity=255"
+setprop debug.egl.hw 1
+# Force the square aspect ratio (BlackBerry Passport vibe)
+wm size 1440x1440
+
+# Increase density to make windows and text tiny like a UMPC
+wm density 360
+# Force Freeform Windows and Resizable Activities
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+
+# Launch Launcher95 Pro (Start Menu) as a persistent system layer
+appops set com.launcher95.pro SYSTEM_ALERT_WINDOW allow
+am start -n com.launcher95.pro/.MainActivity
+
+
+# Maximize the 'Mechanical Click' vibration for Tappy
+settings put system haptic_feedback_intensity 3
+settings put system haptic_feedback_enabled 1
+# Force Hi-Res Audio Buffering
+setprop persist.audio.hifi true
+setprop audio.offload.pcm.24bit.enable 1
+setprop audio.offload.buffer.size.kb 128
+#!/bin/bash
+echo "INITIATING OMNI-OS: [WIN10 | THOR | DECK | BLACKBERRY]"
+
+# 1. Aesthetics & Hardware spoofing
+settings put secure sysui_theme_customization '{"android.theme.customization.accent_color":"#FF69B4"}'
+cmd wallpaper set /sdcard/Pictures/Cyber_Sakura_Circuit.jpg
+
+# 2. Geometry Overhaul
+wm size 1440x1440
+wm density 340
+wm overscan 0,0,0,380
+
+# 3. Boot Software Stack
+am start -n com.launcher95.pro/.MainActivity      # The Start Menu
+am start -n com.valvesoftware.steam.Main          # The Steam Deck UI
+am start -n com.tappy.keyboard/.TappyIME          # The Physical Logic
+am start -n com.shimeji.pack/.ShimejiActivity     # The Desktop Buddies
+
+echo "OS CONVERSION SUCCESSFUL. NO MINIMALISM REMAINING."
+# Force overlapping freeform windows (Windows 10 logic)
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+
+# Launch Launcher95 Pro and force it to be the "Start Menu" layer
+am start -n com.launcher95.pro/.MainActivity --windowingMode 5
+# Create the shrine for your maximalist assets
+mkdir -p /sdcard/OMNI_OS/SOUTH_PARK_LORE
+mkdir -p /sdcard/OMNI_OS/SPONGEBOB_COLLECTIBLES
+mkdir -p /sdcard/OMNI_OS/CATHOLIC_CATHEDRAL_GLASS
+mkdir -p /sdcard/OMNI_OS/VAIO_SYSTEM_FILES
+
+# Grant your Shimeji buddies permission to crawl all over the UI (220698.jpg)
+appops set com.shimeji.pack SYSTEM_ALERT_WINDOW allow
+#!/bin/bash
+echo "INITIATING OMNI-OS BOOT..."
+echo "IDENTITY: WINDOWS 10 x SONY VAIO x BLACKBERRY PASSPORT"
+
+# 1. Kill Minimalism & Set Geometry
+wm size 1440x1440
+wm density 340
+wm overscan 0,0,0,850
+
+# 2. Boot Software Ecosystem
+am start -n com.launcher95.pro/.MainActivity      # The Desktop
+am start -n com.tappy.keyboard/.TappyIME          # The Physical Logic
+am start -n com.valvesoftware.steam.Main          # The Steam Deck UI
+am start -n com.shimeji.pack/.ShimejiActivity     # The Chaos Buddies
+
+echo "OS CONVERSION SUCCESSFUL. VIBE: IRIDESCENT CLUTTER."
+# Force 24-bit high-fidelity audio output
+setprop persist.audio.hifi true
+setprop audio.offload.pcm.24bit.enable 1
+setprop audio.offload.buffer.size.kb 256
+# Grant overlay permissions for the Shimeji / Desktop Buddy engine
+appops set com.shimeji.pack SYSTEM_ALERT_WINDOW allow
+
+# Create the dedicated South Park asset directory in your Omni-OS root
+mkdir -p /sdcard/OMNI_OS/SOUTH_PARK_SYSTEM/ANIMATIONS
+
+# Command to force-launch the buddy engine in the background
+am startservice -n com.shimeji.pack/.services.ShimejiService
+# Create the icon map directory
+mkdir -p /sdcard/OMNI_OS/SOUTH_PARK_SYSTEM/ICONS
+
+# Example: Use a-shell to link your 'Games' folder to a Cartman icon
+# Note: Requires Launcher95 Pro to be pointed to this directory
+ln -s /sdcard/OMNI_OS/SOUTH_PARK_SYSTEM/ICONS/cartman_face.png /sdcard/Desktop/Games_Icon.png
+# Replace the boot animation (Requires Root / High-Level A-Shell access)
+# Warning: Ensure the zip is correctly formatted for your resolution
+cp /sdcard/OMNI_OS/SOUTH_PARK_SYSTEM/bootanimation.zip /system/media/bootanimation.zip
+
+# Set permissions so the system can read the new boot sequence
+chmod 644 /system/media/bootanimation.zip
+
+# Force Launcher95 Pro to use 'Pink' text for the South Park aesthetic
+settings put secure sysui_theme_customization '{"android.theme.customization.accent_color":"#FF69B4"}'
+https://mountaintown.neocities.org/# Create the South Park 'Life Support' directory
+mkdir -p /sdcard/OMNI_OS/SOUTH_PARK_SYSTEM/TAMAGOTCHI/DATA
+mkdir -p /sdcard/OMNI_OS/SOUTH_PARK_SYSTEM/TAMAGOTCHI/SPRITES
+
+# Grant the buddy engine permission to stay visible during Steam Deck gaming
+appops set com.shimeji.pack SYSTEM_ALERT_WINDOW allow
+
+# Force launch the 'Pet' service as a background process
+am startservice -n com.shimeji.pack/.services.ShimejiService
+# Map the 'F' key (Feed) and 'P' key (Play) to trigger Cartman animations
+# Note: This sends a broadcast to the overlay engine
+am broadcast -a com.shimeji.pack.ACTION_FEED --es "character" "cartman"
+am broadcast -a com.shimeji.pack.ACTION_PLAY --es "character" "cartman"
+# Force the Tamagotchi window into a specific floating coordinate (Top Right)
+# This keeps it visible while you're in the Steam Deck UI
+settings put global freeform_window_orientation 1
+am start -n com.shimeji.pack/.ShimejiActivity --windowingMode 5 --bounds 800,100,1200,500
+# Map hungry/angry triggers to South Park audio files
+setprop ro.config.low_battery_sound /sdcard/OMNI_OS/SOUTH_PARK_SYSTEM/AUDIO/cartman_beef_cake.mp3
+setprop ro.config.notification_sound /sdcard/OMNI_OS/SOUTH_PARK_SYSTEM/AUDIO/cartman_screaming.mp3
+#!/bin/bash
+echo "LOADING CARTMAN VIRTUAL PET MODULE..."
+# Inject Sprites
+cp /sdcard/OMNI_OS/SOUTH_PARK_SYSTEM/TAMAGOTCHI/SPRITES/cartman_idle.gif /data/data/com.shimeji.pack/files/
+# Launch Overlay
+am start -n com.shimeji.pack/.ShimejiActivity
+echo "CARTMAN IS NOW ACTIVE ON YOUR DESKTOP."
+# Force the system to render high-quality blurs (Aero Glass effect)
+settings put global window_animation_scale 0.5
+setprop persist.sys.ui.hw 1
+
+# Force the "Sakura-Cyber" Hot Pink to blend with "Icy Blue" for that liquid vibe
+settings put secure sysui_theme_customization '{"android.theme.customization.accent_color":"#FF69B4","android.theme.customization.system_palette":"#00BFFF"}'
+# Set screen density to 'Densely Packed' for the UMPC feel
+wm density 380
+
+# Grant 'Always-on-top' permission for the Shrine/Icon widgets
+appops set com.launcher95.pro SYSTEM_ALERT_WINDOW allow
+
+# Enable overlapping freeform windows so icons can literally stack
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+# Set screen density to 'Densely Packed' for the UMPC feel
+wm density 380
+
+# Grant 'Always-on-top' permission for the Shrine/Icon widgets
+appops set com.launcher95.pro SYSTEM_ALERT_WINDOW allow
+
+# Enable overlapping freeform windows so icons can literally stack
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+# Create the High-Gloss Library structure
+mkdir -p /sdcard/OMNI_OS/ADVANCED_LIBRARY/CATHOLIC_SHRINE/GLOSSY_ICONS
+mkdir -p /sdcard/OMNI_OS/ADVANCED_LIBRARY/CATHOLIC_SHRINE/STAINED_GLASS_VIBE
+
+# Link your "Library" folder to a high-gloss Cross icon from your references
+ln -s /sdcard/OMNI_OS/ADVANCED_LIBRARY/CATHOLIC_SHRINE/GLOSSY_ICONS/cross_neon.png /sdcard/Desktop/Library_Icon.png
+# Spoof hardware to unlock handheld-specific 'Game Modes'
+setprop ro.product.model "Thor-Aero-S"
+setprop ro.product.brand "Ayn-Vaio"
+
+# Force GPU into high-saturation mode to make the neon pinks and blues "pop"
+setprop debug.egl.buffercount 4
+setprop persist.sys.use_dithering 1
+# Spoof hardware to unlock handheld-specific 'Game Modes'
+setprop ro.product.model "Thor-Aero-S"
+setprop ro.product.brand "Ayn-Vaio"
+
+# Force GPU into high-saturation mode to make the neon pinks and blues "pop"
+setprop debug.egl.buffercount 4
+setprop persist.sys.use_dithering 1
+#!/bin/bash
+echo "BOOTING OMNI-OS: SACRED CYBER-UMPC EDITION..."
+
+# 1. Aesthetics Injection
+settings put secure ui_night_mode 2
+
+# 2. Geometry & Input (BlackBerry/Thor hybrid)
+wm size 1440x1920
+wm density 360
+wm overscan 0,0,0,800 # Reserve space for Tappy Keyboard
+
+# 3. Launch the Clutter
+am start -n com.launcher95.pro/.MainActivity      # Win10 Logic
+am start -n com.valvesoftware.steam.Main          # Steam Deck Logic
+am start -n com.shimeji.pack/.ShimejiActivity     # Cartman & Icon Overlays
+
+echo "MINIMALISM PURGED. CLUTTER IS HOLY."
+# Force the Cartman-Gotchi overlay to use 'Stained Glass' transparency
+am broadcast -a com.shimeji.pack.SET_BACKGROUND --es "path" "/sdcard/OMNI_OS/ADVANCED_LIBRARY/CATHOLIC_SHRINE/glass_bg.png"
+# Force high-quality hardware blurs for a 'Glass' feel
+setprop persist.sys.ui.hw 1
+setprop debug.sf.enable_gl_backpressure 1
+
+# Force the Icy Blue and Deep Magenta palette (from 220751.jpg)
+settings put secure sysui_theme_customization '{"android.theme.customization.accent_color":"#FF00FF","android.theme.customization.system_palette":"#00008B"}'
+# Pack the density so the glass icons look sharp and tiny
+wm density 400
+
+# Grant 'Draw Over Other Apps' to your icon engine
+appops set com.launcher95.pro SYSTEM_ALERT_WINDOW allow
+
+# Enable overlapping freeform windows (The 'PC' feel)
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+# Create the directories for the 'Wet' aesthetic
+mkdir -p /sdcard/OMNI_OS/ADVANCED_LIBRARY/LIQUID_GLOSS/WATER_DROPLETS
+mkdir -p /sdcard/OMNI_OS/ADVANCED_LIBRARY/LIQUID_GLOSS/NEON_SHRINE
+
+# Move your 'Cartman-Gotchi' into a stained-glass frame
+am broadcast -a com.shimeji.pack.SET_FRAME --es "type" "glowing_glass"
+#!/bin/bash
+echo "INITIATING SACRED-CYBER OS CONVERSION..."
+
+# 2. Hardware Identity (Thor x Vaio)
+setprop ro.product.model "Thor-Aero-X"
+wm size 1440x1920
+wm overscan 0,0,0,800 # BlackBerry Keyboard Space
+
+# 3. Launch the Clutter Stack
+am start -n com.launcher95.pro/.MainActivity      # Win10 Desktop
+am start -n com.valvesoftware.steam.Main          # Steam Deck Gaming
+am start -n com.shimeji.pack/.ShimejiActivity     # Floating Catholic/SP Icons
+
+echo "MINIMALISM WIPED. SYSTEM IS NOW GLOSSY AND SACRED."
+# Disable the stock launcher completely (Replace 'com.google.android.apps.nexuslauncher' with your phone's stock launcher package if different)
+pm disable-user --user 0 com.google.android.apps.nexuslauncher
+
+# Force Launcher95 Pro to be the 'Top' process
+am start -n com.launcher95.pro/.MainActivity
+# This forces a hardware display reset - your screen will flicker
+wm density 420 && wm size 1440x1920
+
+# Force 'Freeform' mode to be active at the system level
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+# Hard-lock Hot Pink accents and Deep Blue backgrounds
+settings put secure sysui_theme_customization '{"android.theme.customization.accent_color":"#FF1493","android.theme.customization.system_palette":"#00008B","android.theme.customization.color_source":"preset"}'
+
+# Force the "Liquid Glass" wallpaper to override the system default
+# Grant 'Draw Over Other Apps' and 'Ignore Battery Optimization' (Prevents the system from killing them)
+appops set com.shimeji.pack SYSTEM_ALERT_WINDOW allow
+dumpsys deviceidle whitelist +com.shimeji.pack
+
+# Force-launch the buddy service
+am startservice -n com.shimeji.pack/.services.ShimejiService
+# Increase the bottom dead-zone (The last number is the height)
+wm overscan 0,0,0,1000
+
+# Force the Tappy Keyboard to be the ONLY input method
+ime enable com.tappy.keyboard/.TappyIME
+ime set com.tappy.keyboard/.TappyIME
+echo "FORCING SYSTEM OVERRIDE..."
+settings put global transition_animation_scale 0.5
+settings put global window_animation_scale 0.5
+am force-stop com.android.systemui
+wm density 380
+am start -n com.launcher95.pro/.MainActivity
+echo "UI REFRESHED. CLUTTER ENGAGED."
+# Force the 'BlackBerry Passport' square resolution and UMPC density
+wm size 1440x1920
+wm density 380
+
+# Restart the System UI process to force it to read new color/size data
+am force-stop com.android.systemui
+# Force-enable the Windows 10 style windowing at the kernel level
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+settings put global freeform_window_orientation 0
+# Lock the 'Sakura-Cyber' palette into the secure settings table
+settings put secure sysui_theme_customization '{"android.theme.customization.accent_color":"#FF1493","android.theme.customization.system_palette":"#00008B","android.theme.customization.color_source":"preset"}'
+# Push the entire OS up by 1000 pixels
+wm overscan 0,0,0,1000
+
+# Set Tappy as the permanent master input
+ime enable com.tappy.keyboard/.TappyIME
+ime set com.tappy.keyboard/.TappyIME
+#!/bin/bash
+echo "PURGING MINIMALISM... BOOTING OMNI-OS."
+
+# 1. UI SHOCK
+settings put global transition_animation_scale 0.5
+settings put global window_animation_scale 0.5
+wm density 420
+
+# 2. OVERLAY PERMISSIONS (For Cartman & Icons)
+appops set com.shimeji.pack SYSTEM_ALERT_WINDOW allow
+appops set com.launcher95.pro SYSTEM_ALERT_WINDOW allow
+
+# 3. LAUNCH ALL LAYERS
+am start -n com.launcher95.pro/.MainActivity      # PC Interface
+am start -n com.valvesoftware.steam.Main          # Game Interface
+am startservice -n com.shimeji.pack/.services.ShimejiService # Buddy Interface
+
+echo "SYSTEM OVERRIDDEN. VIBE LOCKED."# --- STAGE 1: HARDWARE IDENTITY (THE AYN THOR / UMPC SPOOF) ---
+# Tricks games and system into 'Console Mode'
+setprop ro.product.model "Thor-Vaio-Hybrid-X"
+setprop ro.product.manufacturer "Sony-AYN"
+setprop persist.sys.power.mode 1
+setprop debug.egl.hw 1
+
+# --- STAGE 2: GEOMETRY & PHYSICAL LOGIC (BLACKBERRY PASSPORT RATIO) ---
+# Sets square resolution and UMPC density. 
+# Creates the 1000px 'Bezel' for the Tappy Keyboard at the bottom.
+wm size 1440x1920
+wm density 420
+wm overscan 0,0,0,1000
+
+# --- STAGE 3: THE SACRED PALETTE (MAGENTA & DEEP BLUE GLASS) ---
+# Overrides 'Material You' with the liquid neon vibe from 220751.jpg
+settings put secure sysui_theme_customization '{"android.theme.customization.accent_color":"#FF1493","android.theme.customization.system_palette":"#00008B","android.theme.customization.color_source":"preset"}'
+settings put secure ui_night_mode 2
+
+# --- STAGE 4: WINDOWS 10 DESKTOP LOGIC (PC CLUTTER) ---
+# Enables overlapping 'Freeform' windows so you can stack South Park/Icons
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+settings put global window_animation_scale 0.5
+
+# --- STAGE 5: ADVANCED LIBRARY ARCHITECTURE ---
+# Creates the folder structure for all your custom assets
+mkdir -p /sdcard/OMNI_OS/SOUTH_PARK_SYSTEM/TAMAGOTCHI
+mkdir -p /sdcard/OMNI_OS/ADVANCED_LIBRARY/CATHOLIC_SHRINE
+mkdir -p /sdcard/OMNI_OS/STEAM_DECK_ROMS
+
+# --- STAGE 6: PERMISSION INJECTION (GOD MODE) ---
+# Prevents the system from killing your overlays/buddies
+appops set com.launcher95.pro SYSTEM_ALERT_WINDOW allow
+appops set com.shimeji.pack SYSTEM_ALERT_WINDOW allow
+appops set com.tappy.keyboard SYSTEM_ALERT_WINDOW allow
+dumpsys deviceidle whitelist +com.shimeji.pack
+
+# --- STAGE 7: BOOT THE OS LAYERS ---
+# Launches the Windows logic, Steam Deck gaming, and Cartman-Gotchi
+am start -n com.launcher95.pro/.MainActivity
+am start -n com.valvesoftware.steam.Main
+am startservice -n com.shimeji.pack/.services.ShimejiService
+ime enable com.tappy.keyboard/.TappyIME
+ime set com.tappy.keyboard/.TappyIME
+
+# --- STAGE 8: THE FORCE-TRIGGER ---
+# Crashes the phone's stock UI to
+# --- 1. THE LIQUID CATHEDRAL VIBE (AESTHETICS) ---
+# Force the Icy Blue and Deep Magenta palette from your reference
+settings put secure sysui_theme_customization '{"android.theme.customization.accent_color":"#FF00FF","android.theme.customization.system_palette":"#00008B","android.theme.customization.color_source":"preset"}'
+
+# Force high-gloss transparency (Aero Glass effect)
+setprop persist.sys.ui.hw 1
+setprop debug.sf.enable_gl_backpressure 1
+
+# --- 2. SOUTH PARK MAXIMALISM (THE CLUTTER) ---
+# Create the directory for your South Park assets and icons
+mkdir -p /sdcard/OMNI_OS/SOUTH_PARK_SYSTEM/TAMAGOTCHI
+mkdir -p /sdcard/OMNI_OS/ADVANCED_LIBRARY/CATHOLIC_SHRINE
+
+# Grant 'Always-on-top' for Cartman and the Shrine icons
+appops set com.shimeji.pack SYSTEM_ALERT_WINDOW allow
+appops set com.launcher95.pro SYSTEM_ALERT_WINDOW allow
+
+# --- 3. HARDWARE RE-CONFIGURATION (THOR x BLACKBERRY) ---
+# Force the square UMPC density and resolution
+wm size 1440x1920
+wm density 420
+
+# Create the physical bezel for the Tappy keyboard at the bottom
+wm overscan 0,0,0,1000
+
+# --- 4. CARTMAN-GOTCHI & DESKTOP BUDDIES ---
+# Boot the service that keeps Cartman crawling on your screen
+am startservice -n com.shimeji.pack/.services.ShimejiService
+
+# Broadcast to spawn Cartman specifically in the corner
+am broadcast -a com.shimeji.pack.ACTION_SPAWN --es "character" "cartman"
+
+# --- 5. THE FORCE TRIGGER (UI CRASH) ---
+# This forces the phone to actually apply the size and color changes
+am force-stop com.android.systemui
+am start -n com.launcher95.pro/.MainActivity
+
+echo "SYSTEM OVERRIDDEN: SOUTH PARK x CATHEDRAL VIBE LOADED."
+# Send a command to the buddy engine to spawn Cartman specifically
+am broadcast -a com.shimeji.pack.ACTION_SPAWN --es "character" "cartman"
+
+# Move him to the 'Start Menu' corner
+am broadcast -a com.shimeji.pack.ACTION_MOVE --ei "x" 100 --ei "y" 1400
+# Kenny muffled sound for notifications
+setprop ro.config.notification_sound /sdcard/OMNI_OS/SOUTH_PARK_SYSTEM/AUDIO/kenny_muffled.mp3
+# Cartman 'Respect my authority' for system errors
+setprop ro.config.alarm_alert /sdcard/OMNI_OS/SOUTH_PARK_SYSTEM/AUDIO/cartman_authority.mp3
+# --- 1. THE SACRED CYBER-VIBE (AESTHETICS) ---
+# Force the Icy Blue and Deep Magenta palette (Reference 220751.jpg)
+settings put secure sysui_theme_customization '{"android.theme.customization.accent_color":"#FF00FF","android.theme.customization.system_palette":"#00008B","android.theme.customization.color_source":"preset"}'
+
+# Inject high-gloss transparency and 24-bit audio buffers
+setprop persist.sys.ui.hw 1
+setprop persist.audio.hifi true
+setprop audio.offload.pcm.24bit.enable 1
+
+# --- 2. SOUTH PARK & RELIGIOUS CLUTTER ---
+# Create the 'Advanced Library' directories
+mkdir -p /sdcard/OMNI_OS/SOUTH_PARK/TAMAGOTCHI
+mkdir -p /sdcard/OMNI_OS/SHRINE/GLOSSY_ICONS
+
+# Enable overlapping 'Freeform' windows (Windows 10 Logic)
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+
+# --- 3. HARDWARE CONFIG (BLACKBERRY x THOR) ---
+# Force square resolution and high density
+wm size 1440x1920
+wm density 420
+
+# Create the 1000px bezel for the Tappy Keyboard
+wm overscan 0,0,0,1000
+
+# --- 4. THE CARTMAN-GOTCHI OVERLAY ---
+# Grant 'Always-on-top' and boot the buddy service
+appops set com.shimeji.pack SYSTEM_ALERT_WINDOW allow
+am startservice -n com.shimeji.pack/.services.ShimejiService
+
+# Trigger Cartman specifically
+am broadcast -a com.shimeji.pack.ACTION_SPAWN --es "character" "cartman"
+
+# --- 5. THE TOTAL SYSTEM REFRESH ---
+# This forces the phone to recalculate the size, colors, and layers
+am force-stop com.android.systemui
+am start -n com.launcher95.pro/.MainActivity
+
+echo "SYSTEM OVERRIDDEN. VIBE LOCKED."
+# Run this to map keyboard 'clicks' to South Park theme chimes
+mkdir -p /sdcard/OMNI_OS/SOUTH_PARK/AUDIO
+# Note: Ensure you have 'click.mp3' in this folder
+settings put system sound_effects_enabled 1
+setprop ro.config.notification_sound /sdcard/OMNI_OS/SOUTH_PARK/AUDIO/kenny_muffled.mp3
+# Force the system UI to shrink and stay at the top
+# wm overscan [left],[top],[right],[bottom]
+wm overscan 0,0,0,1000
+
+# Ensure the Tappy Keyboard is forced to stay active in that void
+settings put secure show_ime_with_hard_keyboard 1
+# Force the Input Method Editor (IME) to stay persistent
+settings put secure accessibility_soft_keyboard_mode 1
+
+# Grant Tappy permission to bypass the 'Minimize' logic
+appops set com.tappy.keyboard SYSTEM_ALERT_WINDOW allow
+# Re-align the Shimeji service to the new screen boundaries
+am broadcast -a com.shimeji.pack.RECALIBRATE_BOUNDS
+
+# Move Cartman so he sits 'on top' of the Tappy Keyboard bezel
+am broadcast -a com.shimeji.pack.ACTION_MOVE --ei "x" 500 --ei "y" 950
+# Re-engages the BlackBerry Physical logic
+wm overscan 0,0,0,1000
+# Force the OS to stay in the top section only
+wm overscan 0,0,0,1000
+
+# Prevent the system from hiding the keyboard when you click the desktop
+settings put secure show_ime_with_hard_keyboard 1
+# Force the soft keyboard to remain visible even without a text field
+settings put secure accessibility_soft_keyboard_mode 1
+
+# Grant Tappy 'Always-on-top' priority
+appops set com.tappy.keyboard SYSTEM_ALERT_WINDOW allow
+# Recalculate the boundaries for your Desktop Buddies
+am broadcast -a com.shimeji.pack.RECALIBRATE_BOUNDS
+
+# Move Cartman to sit exactly on top of the Keyboard line
+am broadcast -a com.shimeji.pack.ACTION_MOVE --ei "x" 500 --ei "y" 900
+#!/bin/bash
+echo "ANCHORING DESKTOP TO TOP..."
+wm overscan 0,0,0,1050
+wm density 420
+am force-stop com.android.systemui
+am start -n com.launcher95.pro/.MainActivity
+ime set com.tappy.keyboard/.TappyIME
+echo "HARDWARE SYMMETRY LOCKED."
+# --- 1. HARD-ANCHOR THE DISPLAY TO TOP ---
+# This pushes all apps, status bars, and windows to the top edge.
+# Adjust the '1100' up or down until Tappy fits the gap perfectly.
+wm overscan 0,0,0,1100
+
+# --- 2. PREVENT KEYBOARD DISMISSAL ---
+# Forces the Tappy keyboard to stay open even if you aren't typing.
+settings put secure accessibility_soft_keyboard_mode 1
+settings put secure show_ime_with_hard_keyboard 1
+
+# --- 3. ALIGN SOUTH PARK & SACRED ICONS ---
+# Move Cartman so he 'walks' on the top edge of the Tappy keyboard.
+# Move the Catholic Library icons to the center-right of the top section.
+am broadcast -a com.shimeji.pack.RECALIBRATE_BOUNDS
+am broadcast -a com.shimeji.pack.ACTION_MOVE --ei "x" 500 --ei "y" 850
+
+# --- 4. REFRESH THE WINDOW STACK ---
+# Restarts the UI to make sure Launcher95 Pro respects the new boundaries.
+am force-stop com.android.systemui
+am start -n com.launcher95.pro/.MainActivity
+am start -n com.launcher95.pro/.MainActivity --windowingMode 5
+
 
 echo "QUANTUM DEPLOYMENT COMPLETE. WELCOME TO YEAR 3000."
