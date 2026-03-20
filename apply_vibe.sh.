@@ -1,0 +1,18 @@
+# --- Snappy Futuristic Animations ---
+settings put global window_animation_scale 0.2
+settings put global transition_animation_scale 0.2
+settings put global animator_duration_scale 0.2
+
+# --- Bluish-Pinkish Material You Palette ---
+# This forces a Neon Pink (#FF00FF) and Cyan (#00FFFF) vibe
+settings put secure theme_customization_overlay_packages '{"android.theme.customization.system_palette":"#FF00FF", "android.theme.customization.accent_color":"#00FFFF", "android.theme.customization.theme_style":"EXPRESSIVE"}'
+
+# --- Advanced High-Res UI (DPI Change) ---
+# Makes things smaller/more "pro" looking. Adjust 380 to your liking.
+wm density 380
+
+# --- Clean Author Mode ---
+# Hides the gesture bar at the bottom for a seamless look
+settings put global policy_control immersive.navigation=*
+
+echo "Vibe applied. Welcome to the future."
