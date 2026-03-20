@@ -98,3 +98,63 @@ curl -u YOUR_GITHUB_USER:YOUR_TOKEN -X PUT -d "{\"message\":\"Vibe Check\",\"con
 # This code disables the "Recents" button so no one can see what you were 
 # writing if they grab your phone. You have to "Code" your way back in.
 settings put secure navbar_buttons_managed_by_parent 1
+
+# --- DATA STREAM LOCKSCREEN ---
+# This forces the phone to show "Developer Logs" over the UI for 2 seconds
+# making it look like a futuristic PC booting up.
+settings put global show_processes 1
+sleep 2
+settings put global show_processes 0
+
+# --- THE "AUTHORIZED USER" LOCKSCREEN ---
+# Change the lockscreen message to look like a BIOS terminal
+settings put system lock_screen_owner_info "OS_VERSION_2.6.0_STABLE // AUTHORIZED_USER: ADRIEL // ENCRYPTION_ACTIVE"
+settings put system lock_screen_owner_info_enabled 1
+# --- MULTI-WINDOW OVERRIDE ---
+# This forces the phone to allow "Floating Windows" for EVERY app
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+
+# --- THE "GLASS" UI EFFECT ---
+# If your phone supports it, this increases the "blur" behind windows
+# giving it that expensive, futuristic look.
+settings put global disable_window_blurs 0
+# --- NEON MATRIX COLORS ---
+# Background: Deep Space Blue (#000022) | Accent: Hyper-Pink (#FF007F)
+settings put secure theme_customization_overlay_packages '{"android.theme.customization.system_palette":"#FF007F","android.theme.customization.accent_color":"#00E5FF","android.theme.customization.theme_style":"VIBRANT"}'
+
+# --- ICON STEALTHER ---
+# Wipes the status bar clean. It looks like a solid slab of glass.
+settings put secure icon_blacklist battery,wifi,bluetooth,cell,alarm_clock,vibrate,rotate
+# --- HIGH-DENSITY TERMINAL (BlackBerry Passport Vibe) ---
+# This makes everything smaller, sharper, and professional. 
+# 500-600 is the "Sweet Spot" for looking like a PC handheld.
+wm density 540
+
+# --- GLOBAL WINDOW TILING ---
+# Force "Freeform" windows so you can have your writing app, 
+# your dream journal, and your terminal all open at once.
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+
+# --- SYSTEM SPEED OVERRIDE ---
+# Remove all "Human" delay. Everything should be instant/robotic.
+settings put global window_animation_scale 0.0
+settings put global transition_animation_scale 0.0
+settings put global animator_duration_scale 0.0
+# --- CYBER-COTTON-CANDY MATRIX ---
+# Deep Navy (#00001A) | Neon Pink (#FF00FF) | Electric Cyan (#00FFFF)
+settings put secure theme_customization_overlay_packages '{"android.theme.customization.system_palette":"#FF00FF","android.theme.customization.accent_color":"#00FFFF","android.theme.customization.theme_style":"VIBRANT","android.theme.customization.color_both":"1"}'
+
+# --- THE "GLASS" SYSTEM ---
+# This enables advanced blur effects seen in Chinese HyperOS/OriginOS
+settings put global disable_window_blurs 0
+# --- WIPE THE STATUS BAR ---
+# Removes every icon from the top. Total stealth. 
+# It looks like a custom industrial slab of tech.
+settings put secure icon_blacklist battery,wifi,bluetooth,cell,alarm_clock,vibrate,location,volume
+
+# --- LOCKSCREEN BIOS ---
+# Change the lockscreen text to look like a system boot log
+settings put system lock_screen_owner_info "[ADRIEL_OS_v2.6] // KERNEL: STABLE // AUTH_REQUIRED"
+settings put system lock_screen_owner_info_enabled 1
