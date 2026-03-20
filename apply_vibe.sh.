@@ -43,3 +43,26 @@ settings put global heads_up_notifications_enabled 0
 # Create a shortcut for a "Liturgical Theme" 
 # Run this command to swap to Purple/Gold colors during Lent/Easter
 # settings put secure theme_customization_overlay_packages '{"android.theme.customization.accent_color":"#800080"}'
+
+# Enable Freeform Windows (The ultimate Windows-vibe feature)
+settings put global enable_freeform_support 1
+
+# Force every app to be resizable (even if the developer blocked it)
+settings put global force_resizable_activities 1
+
+# Enable "Desktop Mode" (This triggers a more PC-like UI when you multi-task)
+settings put global force_desktop_mode_on_external_displays 1
+# Force a Neon Pink (#FF1493) and Deep Cyan (#00CED1) Palette
+# The 'EXPRESSIVE' style makes the colors pop much harder than normal
+settings put secure theme_customization_overlay_packages '{"android.theme.customization.system_palette":"#FF1493","android.theme.customization.accent_color":"#00CED1","android.theme.customization.theme_style":"EXPRESSIVE"}'
+
+# Make the Quick Settings tiles use your custom pinkish glow
+settings put secure sysui_type_accent_color #FF69B4
+# Disable "Absolute Volume" (Gives your IEMs 100 levels of volume instead of 15)
+settings put global btsession_absolute_volume_disabled 1
+
+# Disable "Heads-up" Notifications (Stops those annoying popups while you're writing)
+settings put global heads_up_notifications_enabled 0
+
+# Force 120Hz Refresh Rate (Make the bluish-pinkish UI feel like liquid)
+# Note: Use 'wm refresh_rate 120' if your phone hardware supports it
