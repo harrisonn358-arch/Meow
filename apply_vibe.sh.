@@ -317,3 +317,82 @@ settings put system lock_screen_owner_info_enabled 1
 
 echo "System Ready. Fold to initiate Handheld Mode."
 
+#!/bin/bash
+# --- ADRIEL-OS v2.6 // Z-FLIP-7 HYPER-DRIVE ---
+echo "Initializing Industrial Y2K Environment..."
+
+# 1. EMULATOR MANIFEST (Silent Auto-Install)
+# These use 'curl' to pull the latest 2026 builds directly into your phone.
+echo "Downloading Handheld PC Arsenal..."
+
+# Winlator (PC/Steam Games)
+curl -L -o /sdcard/Download/winlator.apk https://github.com/brunodev85/winlator/releases/latest/download/Winlator_10.1.apk
+pm install -r --bypass-low-target-sdk-block /sdcard/Download/winlator.apk
+
+# NetherSX2 (Advanced PS2 - Perfect for 2000s tech vibe)
+curl -L -o /sdcard/Download/nethersx2.apk https://github.com/Trixarian/NetherSX2-patch/releases/latest/download/NetherSX2.apk
+pm install -r /sdcard/Download/nethersx2.apk
+
+# Citra Enhanced (3DS - Custom Dual-Screen logic for Flip 7)
+curl -L -o /sdcard/Download/citra.apk https://github.com/weihuoya/citra/releases/latest/download/Citra_Enhanced.apk
+pm install -r /sdcard/Download/citra.apk
+
+# 2. CARTMAN X SPONGEBOB X PANASONIC COLOR MATRIX
+# Background: Deep Aqua (#00B8C4) | Accent: Patrick Pink (#FF91AF) 
+# Style: 'EXPRESSIVE' forces the Z Flip 7's AMOLED to its brightest neon.
+echo "Injecting Bluish-Pinkish-Yellow Matrix..."
+settings put secure theme_customization_overlay_packages '{"android.theme.customization.system_palette":"#00B8C4","android.theme.customization.accent_color":"#FF91AF","android.theme.customization.theme_style":"EXPRESSIVE"}'
+
+# 3. PANASONIC LET'S NOTE "DASHBOARD" (DPI Override)
+# This makes the UI look like a professional 10-inch laptop.
+# 540 is the "Sweet Spot" for the Flip 7's extra-long screen.
+wm density 540
+
+# 4. STEAM DECK PERFORMANCE KERNEL (Simulation)
+# Force 120Hz and remove animation delay for a "Robotic" feel.
+settings put global window_animation_scale 0.0
+settings put global transition_animation_scale 0.0
+settings put global animator_duration_scale 0.0
+settings put global peak_refresh_rate 120.0
+
+# 5. BIOS BOOTLOADER MESSAGE (Cover Screen + Lockscreen)
+#!/bin/bash
+# --- ADRIEL-OS v3.0 // Y3K QUANTUM INJECTION ---
+echo "BOOTING SYSTEM... [ADRIEL_AUTHOR_PROTOCOL_ACTIVE]"
+
+# 1. THE "GLITCH-GLOSS" UI (2000s x 3000s)
+# Cartman Aqua (#00B8C4) | Patrick Pink (#FF91AF) | SpongeBob Yellow (#FFE11D)
+# We use 'EXPRESSIVE' style for high-contrast, holographic-looking menus.
+settings put secure theme_customization_overlay_packages '{"android.theme.customization.system_palette":"#00B8C4","android.theme.customization.accent_color":"#FF91AF","android.theme.customization.theme_style":"EXPRESSIVE","android.theme.customization.color_both":"1"}'
+
+# 2. PANASONIC "QUANTUM" DENSITY (The Let's Note Look)
+# 580 DPI makes your Z Flip 7 look like a high-end Japanese engineering laptop.
+wm density 580
+
+# 3. STEAM DECK "KINETIC" ANIMATIONS
+# Removing all "Human" delays. Everything is instant, robotic, and snappy.
+settings put global window_animation_scale 0.0
+settings put global transition_animation_scale 0.0
+settings put global animator_duration_scale 0.0
+settings put global peak_refresh_rate 120.0
+
+# 4. THE "AUTHOR'S STEALTH" STATUS BAR
+# Wipes all icons. It looks like a clean slab of futuristic glass.
+settings put secure icon_blacklist battery,wifi,bluetooth,cell,alarm_clock,vibrate,location,volume
+
+# 5. Y3K BIOS LOCKSCREEN (BIOS + 3000s Vibe)
+settings put system lock_screen_owner_info "PANASONIC-QUANTUM-CF [Z-FLIP-7] // SYSTEM_ID: BIKINI_BOTTOM // USER: ADRIEL // YEAR: 3000 // UPLINK: STABLE"
+settings put system lock_screen_owner_info_enabled 1
+
+# 6. UNIVERSAL EMULATOR INJECTOR
+# Silently installs the "Holy Grail" of handheld PC gaming.
+pm install -r --bypass-low-target-sdk-block /sdcard/Download/winlator.apk
+pm install -r /sdcard/Download/nethersx2.apk
+pm install -r /sdcard/Download/citra_enhanced.apk
+
+echo "QUANTUM DEPLOYMENT COMPLETE. WELCOME TO YEAR 3000."
+# Every time you run your GitHub script, it creates a "Status Report" 
+# in your repo so you can monitor your "OS" from any computer.
+curl -X PUT -H "Authorization: token YOUR_GITHUB_TOKEN" \
+     -d "{\"message\":\"System Update: $(date)\",\"content\":\"$(echo 'Adriel OS v3.0 Active' | base64)\"}" \
+     https://api.github.com/repos/YOUR_USER/YOUR_REPO/contents/status.log
