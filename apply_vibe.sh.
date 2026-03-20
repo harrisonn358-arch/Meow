@@ -225,3 +225,95 @@ settings put system lock_screen_owner_info_enabled 1
 settings put global transition_animation_scale 5.0
 sleep 0.5
 settings put global transition_animation_scale 0.0 # Instant robotic snaps
+
+# --- Z FLIP 7 DUAL-SCREEN LOGIC ---
+# Force "Multi-Window" for every app (Essential for Flip 7 Flex Mode)
+settings put global enable_freeform_support 1
+settings put global force_resizable_activities 1
+
+# --- THE "MINI-PC" COVER SCREEN ---
+# This targets the inner display first to give it that "Let's Note" density
+# 397 PPI is stock; we'll push it to 460 for that ultra-sharp tech look
+wm density 460
+
+# --- FLEX MODE INJECTION ---
+# Keeps the "bluish-pinkish" UI active even when the phone is half-folded
+settings put global flex_mode_app_list "com.android.settings,com.github.ui,com.termux"
+# --- CARTMAN NEON MATRIX ---
+# Cartman Aqua (#00B8C4) | Patrick Pink (#FF91AF) | SpongeBob Yellow (#FFE11D)
+# This uses the "MONET" engine to force these colors into the Blur layers.
+settings put secure theme_customization_overlay_packages '{"android.theme.customization.system_palette":"#00B8C4","android.theme.customization.accent_color":"#FF91AF","android.theme.customization.theme_style":"EXPRESSIVE","android.theme.customization.color_both":"1"}'
+
+# Force Dark Mode (Makes the pink and cyan look futuristic)
+settings put secure ui_night_mode 2
+# --- STEALTH STATUS BAR ---
+# Removes the "Mobile" feel. It now looks like a Panasonic diagnostic tool.
+settings put secure icon_blacklist battery,wifi,bluetooth,cell,alarm_clock,vibrate,rotate
+# Show the clock down to the second (Very 2000s PC vibe)
+settings put secure status_bar_clock_seconds 1
+# --- BIOS BOOTLOADER MESSAGE ---
+settings put system lock_screen_owner_info "PANASONIC CF-SV [Z-FLIP-7] // BIOS v2.6 // USER: ADRIEL // BIKINI BOTTOM SECURE LINK: ACTIVE"
+settings put system lock_screen_owner_info_enabled 1
+# --- STEAM DECK PERFORMANCE LAYER ---
+# Disable "GOS" (Game Optimizing Service) throttling via shell
+settings put global game_driver_all_apps 1
+settings put global updatable_driver_all_apps 1
+
+# Force 120Hz Refresh Rate globally (for that "liquid" Steam Deck feel)
+settings put global peak_refresh_rate 120.0
+settings put global min_refresh_rate 120.0
+
+# Increase touch sampling rate for "Pro" response times
+settings put system pointer_speed 10
+# Grant the launcher secure settings to act as the "OS"
+pm grant com.kofis.consolelauncher android.permission.WRITE_SECURE_SETTINGS
+
+# Enable "Flex Mode" Gaming 
+# This keeps the game on the top half and controls/chat on the bottom
+settings put global flex_mode_app_list "com.antutu.ABenchMark,com.citra.emu,com.dolphine.emu"
+# --- NEON CONSOLE PALETTE ---
+# Deep Space Cyan (#00FFFF) | Hot Pink (#FF007F) | Cartman Teal (#008080)
+settings put secure theme_customization_overlay_packages '{"android.theme.customization.system_palette":"#00FFFF","android.theme.customization.accent_color":"#FF007F","android.theme.customization.theme_style":"EXPRESSIVE"}'
+#!/bin/bash
+# --- ADRIEL-OS v2.6 // HANDHELD PC MANIFEST ---
+
+echo "Starting System Overhaul..."
+
+# 1. EMULATOR SUITE (Downloading directly from GitHub Sources)
+# This uses 'pm install' to bypass the "Too Old" or "Unknown Source" errors.
+echo "Downloading Handheld Arsenal..."
+
+# Winlator (PC Games/Steam)
+curl -L -o /sdcard/Download/winlator.apk https://github.com/brunodev85/winlator/releases/latest/download/Winlator_7.1.apk
+pm install -r /sdcard/Download/winlator.apk
+
+# Citra (3DS - Perfect for the Z Flip Fold)
+curl -L -o /sdcard/Download/citra.apk https://github.com/citra-emu/citra-canary/releases/latest/download/citra-canary.apk
+pm install -r /sdcard/Download/citra.apk
+
+# Vita3K (PS Vita - The Ultimate 2000s Handheld Vibe)
+curl -L -o /sdcard/Download/vita3k.apk https://github.com/Vita3K/Vita3K-Android/releases/latest/download/Vita3K.apk
+pm install -r /sdcard/Download/vita3k.apk
+
+# 2. PANASONIC LET'S NOTE / Y2K UI INJECTION
+echo "Injecting Bluish-Pinkish-Yellow Matrix..."
+
+# Cartman Aqua + Patrick Pink + SpongeBob Yellow
+settings put secure theme_customization_overlay_packages '{"android.theme.customization.system_palette":"#00B8C4","android.theme.customization.accent_color":"#FF91AF","android.theme.customization.theme_style":"EXPRESSIVE"}'
+
+# High-Resolution "PC" Density (Makes the Flip 7 look like a Let's Note)
+wm density 500
+
+# 3. STEAM DECK PERFORMANCE OVERRIDE
+echo "Unlocking Snapdragon Performance..."
+settings put global window_animation_scale 0.1
+settings put global transition_animation_scale 0.1
+settings put global animator_duration_scale 0.1
+settings put global peak_refresh_rate 120.0
+
+# 4. BIOS LOCKSCREEN
+settings put system lock_screen_owner_info "PANASONIC CF-SV [Z-FLIP-7] // BIOS v2.6 // USER: ADRIEL // BIKINI BOTTOM SECURE LINK: ACTIVE"
+settings put system lock_screen_owner_info_enabled 1
+
+echo "System Ready. Fold to initiate Handheld Mode."
+
